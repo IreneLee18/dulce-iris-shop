@@ -1,0 +1,28 @@
+.input-error{
+  color: $danger;
+  font-size: 16px;
+  margin-top: 10px;
+}
+input[type=checkbox]:after {
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  top: 0;
+  content: " ";
+  background-color: #fff;
+  color: $dark-brown;
+  border: 1px solid $dark-brown;
+  display: inline-block;
+  visibility: visible;
+  padding: 0px 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked:after {
+  content: "✔︎";
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  background: $dark-brown;
+}

@@ -1,0 +1,37 @@
+$light-brown: #a79387;
+$dark-brown: #533f34;
+$danger: #ff5f5f;
+$success: #ddff77;
+
+@mixin size($lw, $lh, $mw, $mh, $sw, $sh , $bdrs15: false) {
+  width: $lw;
+  height: $lh;
+
+  @media (max-width:768px) {
+    width: $mw;
+    height: $mh;
+  }
+
+  @media (max-width:375px) {
+    width: $sw;
+    height: $sh;
+  }
+
+  @if $bdrs15 {
+    border-radius: 15px;
+  }
+}
+
+@mixin padding($t,$r,$b,$l) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

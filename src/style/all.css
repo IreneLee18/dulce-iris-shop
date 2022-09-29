@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #533f34;
+  min-height: 100vh;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input, select {
+  outline: none;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: 1px solid #533f34;
+}
+
+a {
+  text-decoration: none;
+  color: #533f34;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 320px;
+  }
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+.input-error {
+  color: #ff5f5f;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+input[type=checkbox]:after {
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  top: 0;
+  content: " ";
+  background-color: #fff;
+  color: #533f34;
+  border: 1px solid #533f34;
+  display: inline-block;
+  visibility: visible;
+  padding: 0px 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked:after {
+  content: "✔︎";
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  background: #533f34;
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,124 @@
+.material-symbols-outlined {
+  font-size: 80px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .material-symbols-outlined {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 375px) {
+  .material-symbols-outlined {
+    font-size: 40px;
+  }
+}
+
+.material-symbols-outlined:hover {
+  color: #ff5f5f;
+}
+
+.login {
+  width: 700px;
+  height: 385px;
+  border-radius: 15px;
+  border: 1px solid #533f34;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .login {
+    width: 500px;
+    height: 385px;
+  }
+}
+
+@media (max-width: 375px) {
+  .login {
+    width: 300px;
+    height: 320px;
+  }
+}
+
+.login label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 375px) {
+  .login label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+.login label .input-title {
+  margin-bottom: 10px;
+}
+
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="submit"] {
+  width: 100%;
+  font-size: 24px;
+}
+
+@media (max-width: 375px) {
+
+  .login input[type="text"],
+  .login input[type="password"],
+  .login input[type="submit"] {
+    font-size: 16px;
+  }
+}
+
+.login input[type="submit"] {
+  color: #533f34;
+  background: #a79387;
+  border: none;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.login .remember{
+  position: relative;
+}
+
+.login #remember+span {
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.login p {
+  text-align: center;
+}
+
+.login p span {
+  cursor: pointer;
+}
+
+.login p span:hover {
+  color: #ff5f5f;
+}
