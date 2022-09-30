@@ -1,6 +1,6 @@
 .slider {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 76px);
 
   img {
     height: 100%;

@@ -1,3 +1,45 @@
+export const navAllLink = [
+  {
+    title: "關於我們",
+    englishTitle: "ABOUT US",
+    link: "/about",
+  },
+  {
+    title: "所有商品",
+    englishTitle: "SHOP ALL",
+    link: "/product",
+  },
+  {
+    title: "養肌課程",
+    englishTitle: "FACE CARE COURSE",
+    link: "/product/face",
+  },
+  {
+    title: "睫毛課程",
+    englishTitle: "EYELASH COURSE",
+    link: "/product/eye",
+  },
+  {
+    title: "居家保養",
+    englishTitle: "FACIAL CARE PRODUCTS",
+    link: "/product/home",
+  },
+  {
+    title: "預約時間",
+    englishTitle: "RESERVE",
+    link: "/reserve",
+  },
+  {
+    title: "優惠卷",
+    englishTitle: "Coupons",
+    link: "/coupons",
+  },
+  {
+    title: "訂單查詢",
+    englishTitle: "ORDERS",
+    link: "/orders",
+  },
+];
 export const productLink = [
   {
     title: "全部商品",
