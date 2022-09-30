@@ -1,0 +1,28 @@
+.slider {
+  position: relative;
+  height: 100vh;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &-link {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    cursor: pointer;
+
+    &:hover {
+      p {
+        text-shadow: 7px 5px 2px $light-brown;
+      }
+    }
+
+    p {
+      font-size: 36px;
+      text-shadow: 1px 1px 3px $light-brown;
+    }
+  }
+}

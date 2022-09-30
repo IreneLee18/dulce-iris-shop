@@ -359,6 +359,7 @@ input[type=checkbox]:checked:after {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 }
 
 .user-header .logo {
@@ -449,6 +450,34 @@ input[type=checkbox]:checked:after {
 }
 
 .user-main {
-  min-height: 100vh;
+  min-height: calc(100vh - 76px);
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+}
+
+.slider img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider-link {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.slider-link:hover p {
+  text-shadow: 7px 5px 2px #a79387;
+}
+
+.slider-link p {
+  font-size: 36px;
+  text-shadow: 1px 1px 3px #a79387;
 }
 /*# sourceMappingURL=all.css.map */
