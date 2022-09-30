@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { productLink, sliderData } from "../utils/Data";
+import { productLink, sliderData } from "../../../../utils/Data";
 
 const perSlider = 1;
 const totalPage = [

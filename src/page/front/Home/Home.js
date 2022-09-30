@@ -1,4 +1,4 @@
-import Slider from "../../components/Slider";
+import Slider from "./Component/Slider";
 function Home() {
   return (
     <>

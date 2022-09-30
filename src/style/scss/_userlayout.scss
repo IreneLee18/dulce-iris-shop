@@ -3,6 +3,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 
   .logo {
     font-size: 24px;
@@ -93,7 +94,6 @@
   }
 }
 
-
 .user-main {
-  min-height: 100vh;
+  min-height: calc(100vh - 76px);
 }
