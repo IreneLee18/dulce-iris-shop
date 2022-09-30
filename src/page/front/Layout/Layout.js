@@ -2,7 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
-function Home() {
+function Layout() {
   return (
     <>
       <Header />
@@ -14,4 +14,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Layout;

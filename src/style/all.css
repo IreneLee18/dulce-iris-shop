@@ -432,10 +432,6 @@ input[type=checkbox]:checked:after {
   font-weight: bold;
 }
 
-.user-header .nav-shop-title:hover {
-  color: #fff;
-}
-
 .user-header .nav-shop-item {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

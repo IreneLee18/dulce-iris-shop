@@ -26,6 +26,10 @@ function Header() {
 
   const productLink = [
     {
+      title: "全部商品",
+      link: "/product",
+    },
+    {
       title: "養肌課程系列",
       link: "/product/face",
     },
@@ -40,17 +44,9 @@ function Header() {
   ];
   const discountLink = [
     {
-      title: "養肌課程系列",
-      link: "/product/face",
-    },
-    {
-      title: "睫毛課程系列",
-      link: "/product/eye",
-    },
-    {
-      title: "居家保養系列",
-      link: "/product/home",
-    },
+      title: "全部優惠活動",
+      link: "/product/promotions",
+    }
   ];
   return (
     <header className="user-header">
@@ -67,9 +63,9 @@ function Header() {
               <div className="nav-shop">
                 <ul>
                   <li>
-                    <Link className="nav-shop-title" to="/product">
+                    <p className="nav-shop-title" to="/product">
                       品牌主打
-                    </Link>
+                    </p>
                     <ul className="nav-shop-item">
                       {productLink.map((item) => (
                         <li key={item.title}>
@@ -79,9 +75,9 @@ function Header() {
                     </ul>
                   </li>
                   <li>
-                    <Link className="nav-shop-title" to="/product">
+                    <p className="nav-shop-title" >
                       優惠活動
-                    </Link>
+                    </p>
                     <ul className="nav-shop-item">
                       {discountLink.map((item) => (
                         <li key={item.title}>
