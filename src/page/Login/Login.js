@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { loginAPI } from "../utils/API";
-import { sweetAlert } from "../utils/SweetAlert";
-import InputForm from "../components/InputFrom";
+import { loginAPI } from "../../utils/API";
+import { sweetAlert } from "../../utils/SweetAlert";
+import InputForm from "../../components/InputFrom";
 function Login() {
   const navigate = useNavigate();
   const {

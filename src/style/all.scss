@@ -2,8 +2,8 @@
 @import './scss/variable';
 @import './scss/resect';
 @import './scss/index';
-@import './scss/login';
+@import '../page/Login/login';
 @import './scss/input';
-@import './scss/dashbord';
-@import './scss/userlayout';
-@import './scss/slider';
+@import '../page/back/Layout/dashbord';
+@import '../page/front/Layout/userlayout';
+@import '../page/front/Home/Component/Slider/slider';

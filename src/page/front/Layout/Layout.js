@@ -11,7 +11,7 @@ function Layout() {
     setTimeout(()=>{
       setIsLoading(() => false);
     },[2000])
-  }, []);
+  }, [setIsLoading]);
   return (
     <>
       {isLoading ? (

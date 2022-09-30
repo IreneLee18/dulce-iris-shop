@@ -6,11 +6,11 @@
         "scss/_variable.scss",
         "scss/_resect.scss",
         "scss/_index.scss",
-        "scss/_login.scss",
+        "../page/Login/_login.scss",
         "scss/_input.scss",
-        "scss/_dashbord.scss",
-        "scss/_userlayout.scss",
-        "scss/_slider.scss"
+        "../page/back/Layout/_dashbord.scss",
+        "../page/front/Layout/_userlayout.scss",
+        "../page/front/Home/Component/Slider/_slider.scss"
     ],
     "names": [],
     "file": "all.css"
