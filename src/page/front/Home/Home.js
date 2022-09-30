@@ -1,9 +1,17 @@
-import React from 'react'
+import Header from "./Header";
+import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Header />
+      <main className="user-main">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default Home
+export default Home;

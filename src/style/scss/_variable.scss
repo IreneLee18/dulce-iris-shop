@@ -22,13 +22,6 @@ $success: #ddff77;
   }
 }
 
-@mixin padding($t,$r,$b,$l) {
-  padding-top: $t;
-  padding-right: $r;
-  padding-bottom: $b;
-  padding-left: $l;
-}
-
 @mixin absolute-center {
   position: absolute;
   top: 50%;

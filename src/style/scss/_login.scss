@@ -1,0 +1,87 @@
+.go-home {
+  font-size: 80px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 40px;
+  }
+
+  &:hover {
+    color: $danger;
+  }
+}
+
+
+
+.login {
+  @include size(700px, 385px, 500px, 385px, 300px, 320px, $bdrs15: true);
+  border: 1px solid $dark-brown;
+  padding: 20px;
+  @include absolute-center;
+
+  label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    @media (max-width: 375px) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      &:nth-child(1){
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    width: 100%;
+    font-size: 24px;
+
+    @media (max-width: 375px) {
+      font-size: 16px;
+    }
+  }
+
+  input[type="submit"] {
+    color: $dark-brown;
+    background: $light-brown;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .remember {
+    position: relative;
+  }
+
+  #remember+span {
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  p span {
+    cursor: pointer;
+  }
+
+  p span:hover {
+    color: $danger;
+  }
+}

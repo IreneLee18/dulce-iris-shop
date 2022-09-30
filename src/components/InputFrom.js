@@ -8,9 +8,8 @@ function InputForm({ item, register }) {
         id={id}
         placeholder={placeholder}
         {...register(`${id}`, { ...validation })}
-        // className={ errorsInput[id] ? 'errors-input' : '' }
       />
-      <span className="input-errors">{errors}</span>
+      <span className="input-error">{errors}</span>
     </label>
   );
 }

@@ -1,8 +1,9 @@
-.input-error{
+.input-error {
   color: $danger;
   font-size: 16px;
   margin-top: 10px;
 }
+
 input[type=checkbox]:after {
   position: absolute;
   width: 10px;

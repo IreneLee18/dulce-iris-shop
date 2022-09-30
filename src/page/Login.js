@@ -1,10 +1,10 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { loginAPI } from "../../utils/API";
-import { sweetAlert } from "../../utils/SweetAlert";
-import "./login.css";
+import { loginAPI } from "../utils/API";
+import { sweetAlert } from "../utils/SweetAlert";
+import InputForm from "../components/InputFrom";
 function Login() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -42,7 +42,7 @@ function Login() {
         const { token, expired } = res;
         document.cookie = `myToken=${token};expires=${new Date(expired)}`;
         // console.log(token, expired, new Date(expired)); // 在設定之前可以先看是否有取得到資料
-        navigate('/back/dashbord')
+        navigate("/back/dashbord");
       }
     });
   };
@@ -52,32 +52,18 @@ function Login() {
   return (
     <>
       <div className="container">
-        <Link to="/" className="material-symbols-outlined">
+        <Link to="/" className="material-symbols-outlined go-home">
           home
         </Link>
         <div className="login">
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
             {inputData.map((item, index) => (
-              <label key={`${item.id}${index}`} htmlFor={item.id}>
-                <span className="input-title">{item.title}</span>
-                <input
-                  type={item.type}
-                  id={item.id}
-                  placeholder={item.placeholder}
-                  {...register(`${item.id}`, { ...item.validation })}
-                />
-                <span className="input-error">{item.errors}</span>
-              </label>
-            ))}
-            {/* <label className="remember" htmlFor="remember">
-              <input
-                type="checkbox"
-                id="remember"
-                checked={remember}
-                onChange={() => setRemember((prev) => !prev)}
+              <InputForm
+                item={item}
+                register={register}
+                key={`${item.id}${index}`}
               />
-              <span>記住我</span>
-            </label> */}
+            ))}
             <input type="submit" value="送出" />
             <p>
               忘記密碼｜<span onClick={handleForget}>Forgot password？</span>

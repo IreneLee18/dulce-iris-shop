@@ -1,0 +1,103 @@
+.user-header {
+  background: $light-brown;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .logo {
+    font-size: 24px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-menu li {
+    width: 150px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+
+    @media (max-width:375px) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      span {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+
+    span {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  .nav-icons li {
+    padding: 0 10px;
+  }
+
+  .nav-menu-allProduct {
+    position: relative;
+
+    &:hover {
+      .nav-shop {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav-shop {
+    position: absolute;
+    top: 56px;
+    left: -75px;
+    opacity: 0;
+    visibility: hidden;
+    background: lighten(rgba(167, 147, 135, .6), 5%);
+    transition: .7s all;
+
+    &-title {
+      font-weight: bold;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &-item {
+      flex-direction: column;
+      margin-top: 10px;
+
+      li {
+        padding: 10px;
+
+        &:hover {
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+.user-main {
+  min-height: 100vh;
+}

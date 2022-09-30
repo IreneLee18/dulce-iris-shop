@@ -1,0 +1,87 @@
+.dashbord-header {
+  background: $light-brown;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    width: 150px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+
+    @media (max-width:375px) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      a {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+
+    a {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+
+.dashbord-main {
+  min-height: calc(100vh - 56px - 74px);
+  padding-top: 74px;
+  @media (max-width:375px) {
+  min-height: calc(100vh - 56px - 70px);
+    
+  }
+}
+
+.dashbord-footer {
+  width: 100%;
+  background: $light-brown;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+
+  @media (max-width:375px) {
+    font-size: 12px;
+  }
+  div {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+
+    @media (max-width:375px) {
+      right: 10px;
+    }
+
+    .logout-icon {
+      font-size: 25px;
+
+      @media (max-width:375px) {
+        font-size: 20px;
+      }
+      &:hover {
+        color: $danger;
+      }
+    }
+  }
+  a{
+    &:hover{
+      color: lighten($dark-brown, 5%);
+    }
+  }
+}
