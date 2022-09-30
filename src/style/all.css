@@ -104,6 +104,15 @@ a {
           align-items: center;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .mt10 {
   margin-top: 10px;
 }
@@ -558,5 +567,90 @@ input[type=checkbox]:checked:after {
 .slider-link p {
   font-size: 36px;
   text-shadow: 1px 1px 3px #a79387;
+}
+
+.slogan {
+  background-image: url("./image/logo.jpg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  height: calc(100vh - 76px);
+}
+
+.about-h1 {
+  position: absolute;
+  top: 106px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 36px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #533f34;
+}
+
+@media (max-width: 375px) {
+  .about-h1 {
+    font-size: 20px;
+    top: 92px;
+  }
+}
+
+.about-bg {
+  margin: 0 auto;
+  height: 300px;
+  width: 80%;
+  background-image: url("./image/about.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.about {
+  margin: 186px auto 0;
+}
+
+@media (max-width: 375px) {
+  .about {
+    margin-top: 146px;
+  }
+}
+
+.about div {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about div h2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 36px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #533f34;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 375px) {
+  .about div h2 {
+    font-size: 20px;
+  }
+}
+
+.about div p {
+  font-size: 24px;
+  padding-top: 60px;
+  margin-bottom: 10px;
+  letter-spacing: 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 375px) {
+  .about div p {
+    font-size: 16px;
+    padding-top: 40px;
+  }
 }
 /*# sourceMappingURL=all.css.map */

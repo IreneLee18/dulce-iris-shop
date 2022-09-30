@@ -1,0 +1,63 @@
+.about-h1 {
+  position: absolute;
+  top: 106px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid $dark-brown;
+  @media (max-width:375px) {
+    font-size: 20px;
+    top: 92px;
+  }
+}
+
+.about-bg {
+  margin: 0 auto;
+  height: 300px;
+  width: 80%;
+  background-image: url('./image/about.png');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.about {
+  margin: 186px auto 0;
+  @media (max-width:375px) {
+    margin-top: 146px;
+  }
+
+  div {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+
+    h2 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      padding-bottom: 2px;
+      border-bottom: 2px solid $dark-brown;
+      margin-bottom: 10px;
+      @media (max-width:375px) {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      padding-top: 60px;
+      margin-bottom: 10px;
+      letter-spacing: 10px;
+      line-height: 1.5;
+      @media (max-width:375px) {
+        font-size: 16px;
+        padding-top: 40px;
+      }
+    }
+  }
+}
