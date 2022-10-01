@@ -90,20 +90,24 @@
 
   .nav-shop {
     position: absolute;
-    top: 56px;
+    top: 42px;
     left: -75px;
     opacity: 0;
     visibility: hidden;
-    background: lighten(rgba(167, 147, 135, .6), 5%);
+    background: lighten(rgba(167, 147, 135, .95), 5%);
+    box-shadow: 0 0 20px $light-brown;
     transition: .7s all;
 
+    
     &-title {
+      padding-top: 24px;
       font-weight: bold;
     }
 
     &-item {
       flex-direction: column;
       margin-top: 10px;
+      padding-bottom: 24px;
 
       li {
         padding: 10px;
@@ -162,5 +166,6 @@
 }
 
 .user-main {
+  margin-top: 64px;
   min-height: calc(100vh - 76px);
 }

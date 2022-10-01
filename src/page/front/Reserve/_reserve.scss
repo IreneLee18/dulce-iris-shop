@@ -1,0 +1,174 @@
+.reserve {
+  margin-bottom: 36px;
+
+  h2 {
+    font-size: 36px;
+    display: inline-block;
+    @include title-border;
+    margin-bottom: 10px;
+
+    @media (max-width:375px) {
+      font-size: 30px;
+    }
+  }
+
+  h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 3px $light-brown;
+
+    @media (max-width:375px) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 3px $light-brown;
+
+    @media (max-width:375px) {
+      font-size: 16px;
+    }
+  }
+
+  .list {
+    border: 1px solid $dark-brown;
+    margin-top: 10px;
+
+    ul {
+      margin-top: 10px;
+      font-size: 20px;
+
+      @media (max-width:375px) {
+        font-size: 16px;
+      }
+
+      li {
+        line-height: 1.5;
+      }
+    }
+  }
+
+
+  div>ul>li {
+    margin-bottom: 10px;
+
+    div {
+      &:last-child {
+        padding-left: 25px;
+      }
+    }
+  }
+
+  li>ul {
+    padding-left: 40px;
+
+    @media (max-width:375px) {
+      padding-left: 20px;
+    }
+
+    li {
+      padding-right: 10px;
+    }
+  }
+
+  .list-icon {
+    padding-right: 10px;
+    padding-left: 5px;
+
+    @media (max-width:375px) {
+      padding-right: 5px;
+    }
+  }
+
+  .payment {
+    display: flex;
+    margin-top: 10px;
+
+    @media (max-width:375px) {
+      display: block;
+    }
+  }
+
+  .reserve-supply-info {
+    margin: 10px 0;
+
+    li {
+      margin-bottom: 10px;
+
+      @media (max-width:375px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .warring {
+    color: $danger;
+    font-size: 14px;
+    padding-top: 10px;
+  }
+}
+
+.reserve-calendar {
+  padding: 36px 0;
+}
+
+.calendar {
+  border: 1px solid $dark-brown;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px $dark-brown;
+
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    text-shadow: 2px 2px 3px $dark-brown;
+    padding: 20px;
+    background: lighten($dark-brown, 10%);
+    color: $light-brown;
+  }
+
+  .day {
+    background: $light-brown;
+
+    li {
+      border-right: none;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid $dark-brown;
+    font-size: 24px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    li {
+      width: 14%;
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid $dark-brown;
+
+      @media (max-width:375px) {
+        padding: 10px;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .other {
+    opacity: 0;
+  }
+
+  .today {
+    color: $danger;
+    text-shadow: 2px 2px 3px $danger;
+  }
+}

@@ -28,3 +28,8 @@ $success: #ddff77;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin title-border {
+  padding-bottom: 2px;
+  border-bottom: 2px solid $dark-brown;
+}
