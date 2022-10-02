@@ -2,6 +2,7 @@
 @import './scss/variable';
 @import './scss/resect';
 @import './scss/index';
+@import './scss/animation';
 @import '../page/Login/login';
 @import './scss/input';
 @import '../page/back/Layout/dashbord';
@@ -10,3 +11,7 @@
 @import './scss/home';
 @import '../page/front/About/about';
 @import '../page/front/Reserve/reserve';
+@import '../page/front/Reserve/Component/calendar';
+@import './scss/table';
+@import './scss/modal';
+

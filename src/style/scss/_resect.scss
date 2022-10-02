@@ -45,7 +45,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-input,select{
+input,select,textarea{
   outline: none;
 	border-radius: 5px;
 	padding: 10px 0 10px 10px;
@@ -54,4 +54,10 @@ input,select{
 a{
 	text-decoration: none;
 	color: $dark-brown;
+}
+button{
+	border: none;
+	background: transparent;
+  color: $dark-brown;
+	cursor: pointer;
 }

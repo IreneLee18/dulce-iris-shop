@@ -1,0 +1,108 @@
+.search {
+  text-align: right;
+  margin-bottom: 10px;
+  position: relative;
+
+  select {
+    margin-right: 5px;
+
+    @media (max-width:414px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  input {
+    width: 300px;
+
+    @media (max-width:414px) {
+      width: calc(100% - 12px);
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width:414px) {
+      top: 80%;
+    }
+  }
+}
+
+.dashbord-add {
+  @include scroll-btn(200px);
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border: 2px solid $light-brown;
+  box-shadow: 0 0 10px $light-brown;
+
+  thead {
+    background: lighten($light-brown, 10%);
+
+    tr {
+      @include title-border;
+    }
+
+    th {
+      width: 15%;
+      font-size: 28px;
+      padding: 10px 0;
+      border-right: 2px solid $light-brown;
+      @include font-size(28px, 24px, 20px);
+
+      &:first-child {
+        width: 25%;
+      }
+
+      &:nth-child(2) {
+        width: 30%;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  tr {
+    td {
+      @include font-size(24px, 18px, 16px);
+      @include title-border;
+      border-right: 2px solid $dark-brown;
+      padding: 10px 0;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      button {
+        padding: 5px 15px;
+        @include font-size(24px, 18px, 16px);
+
+        &:hover {
+          animation: flip .7s;
+        }
+
+        @media (max-width:768px) {
+          padding: 0 3px;
+        }
+
+        @media (max-width:414px) {
+          padding: 0;
+        }
+      }
+    }
+
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+}

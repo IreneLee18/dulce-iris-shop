@@ -6,8 +6,8 @@
     max-width: 700px;
   }
 
-  @media (max-width:375px) {
-    max-width: 320px;
+  @media (max-width:414px) {
+    max-width: 330px;
   }
 }
 
@@ -29,4 +29,7 @@
 }
 .mt10{
   margin-top: 10px;
+}
+.scroll-top{
+  @include scroll-btn(100px);
 }

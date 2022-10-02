@@ -12,7 +12,7 @@ $success: #ddff77;
     height: $mh;
   }
 
-  @media (max-width:375px) {
+  @media (max-width:414px) {
     width: $sw;
     height: $sh;
   }
@@ -20,6 +20,19 @@ $success: #ddff77;
   @if $bdrs15 {
     border-radius: 15px;
   }
+}
+
+@mixin font-size($lfz, $mfz, $sfz ) {
+  font-size: $lfz;
+
+  @media (max-width:768px) {
+    font-size: $mfz;
+  }
+
+  @media (max-width:414px) {
+    font-size: $sfz;
+  }
+
 }
 
 @mixin absolute-center {
@@ -32,4 +45,21 @@ $success: #ddff77;
 @mixin title-border {
   padding-bottom: 2px;
   border-bottom: 2px solid $dark-brown;
+}
+
+@mixin scroll-btn($b) {
+  font-size: 50px;
+  position: absolute;
+  right: 100px;
+  bottom: $b;
+
+  &:hover {
+    color: lighten($dark-brown, 15%);
+  }
+  @media (max-width:768px) {
+    right: 50px;
+  }
+  @media (max-width:414px) {
+    right: 30px;
+  }
 }

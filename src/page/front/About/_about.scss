@@ -3,11 +3,11 @@
   top: 106px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 36px;
   @include title-border;
+  @include font-size(36px, 28px, 20px);
+  white-space: nowrap;
 
-  @media (max-width:375px) {
-    font-size: 20px;
+  @media (max-width:414px) {
     top: 92px;
   }
 }
@@ -26,7 +26,7 @@
 .about {
   margin: 186px auto 0;
 
-  @media (max-width:375px) {
+  @media (max-width:414px) {
     margin-top: 146px;
   }
 
@@ -40,24 +40,21 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 36px;
       @include title-border;
       margin-bottom: 10px;
+      @include font-size(36px, 28px, 20px);
 
-      @media (max-width:375px) {
-        font-size: 20px;
-      }
+
     }
 
     p {
-      font-size: 24px;
       padding-top: 60px;
       margin-bottom: 10px;
-      letter-spacing: 10px;
+      letter-spacing: 2px;
       line-height: 1.5;
+      @include font-size(24px, 20px, 16px);
 
-      @media (max-width:375px) {
-        font-size: 16px;
+      @media (max-width:414px) {
         padding-top: 40px;
       }
     }

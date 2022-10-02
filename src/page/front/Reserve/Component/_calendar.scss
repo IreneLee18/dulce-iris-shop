@@ -1,0 +1,74 @@
+.reserve-calendar {
+  padding: 36px 0;
+  width: 60%;
+  @media (max-width:768px) {
+    width: 100%;
+  }
+}
+
+.calendar {
+  border: 1px solid $dark-brown;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px $dark-brown;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: none;
+    text-shadow: 2px 2px 3px $dark-brown;
+    padding: 20px;
+    background: lighten($dark-brown, 10%);
+    color: $light-brown;
+  }
+
+  .day {
+    background: $light-brown;
+
+    li {
+      border-right: none;
+
+      &:first-child,
+      &:last-child {
+        color: lighten($dark-brown, 10%);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid $dark-brown;
+    font-size: 24px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    li {
+      width: 14%;
+      text-align: center;
+      padding: 10px;
+      border-right: 1px solid $dark-brown;
+
+      @media (max-width:414px) {
+        padding: 10px;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .other {
+    opacity: 0;
+  }
+
+  .today {
+    color: $danger;
+    text-shadow: 2px 2px 3px $danger;
+  }
+}

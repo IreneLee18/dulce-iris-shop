@@ -1,0 +1,238 @@
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(255, 255, 255, .5);
+  transition: all .5s;
+
+  &-content {
+    @include absolute-center;
+    margin: 0 auto;
+    border: 2px solid $dark-brown;
+    border-radius: 15px;
+    width: 900px;
+    background: #fff;
+    box-shadow: 0 0 20px $light-brown;
+    overflow: hidden;
+
+    @media (max-width:768px) {
+      width: 700px;
+    }
+
+    @media (max-width:414px) {
+      width: 350px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 36px;
+    padding: 20px;
+    background: $dark-brown;
+    color: $light-brown;
+
+    button {
+      font-size: 36px;
+      color: $light-brown;
+    }
+
+    @media (max-width:414px) {
+      font-size: 28px;
+      padding: 10px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    @media (max-width:414px) {
+      padding: 10px;
+      flex-direction: column;
+      height: 500px;
+      overflow: scroll;
+    }
+  }
+
+  &-info {
+    width: 48%;
+    @media (max-width:414px) {
+      width: 100%;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+
+      span {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+    }
+
+    &-category {
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+
+      button {
+        background: $light-brown;
+        height: 100%;
+        border-radius: 5px;
+        font-size: 18px;
+
+        &:hover {
+          font-weight: bold;
+          box-shadow: 0 0 10px $light-brown;
+        }
+      }
+    }
+
+    &-title {
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+
+      label {
+        &:first-child {
+          width: 58%;
+        }
+
+        &:nth-child(2) {
+          width: 28%;
+
+          @media (max-width:768px) {
+            width: 15%;
+          }
+        }
+
+        &:last-child {
+          width: 10%;
+
+          @media (max-width:768px) {
+            width: 15%;
+          }
+        }
+      }
+
+      .enable {
+        span {
+          text-align: center;
+        }
+
+        input {
+          position: relative;
+
+          &::after {
+            width: 30px;
+            height: 33px;
+          }
+        }
+
+        input[type=checkbox]:checked:after {
+          text-align: center;
+          font-size: 16px;
+          line-height: 33px;
+        }
+      }
+    }
+
+    &-price {
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+    }
+
+    &-description {
+      label {
+        width: 100%;
+      }
+    }
+
+  }
+
+  &-photo {
+    width: 48%;
+    @media (max-width:414px) {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    li {
+      width: 50%;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    span {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    input {
+      width: 90%;
+    }
+
+    .file {
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      input {
+        z-index: 1000;
+        height: 78px;
+        opacity: 0;
+        cursor: pointer;
+      }
+    }
+
+    i {
+      @include absolute-center;
+    }
+
+    div {
+      width: 96%;
+      height: 100px;
+      border: 1px solid $dark-brown;
+      border-radius: 5px;
+      position: absolute;
+    }
+  }
+
+  &-footer {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: right;
+    @media (max-width:414px) {
+      margin: 10px;
+    }
+    button {
+      background-color: $light-brown;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 20px;
+      @media (max-width:414px) {
+        width: 100%;
+      }
+      &:hover {
+        font-weight: bold;
+        box-shadow: 0 0 10px $light-brown;
+      }
+    }
+  }
+}
