@@ -2,7 +2,7 @@
   max-width: 1360px;
   margin: 0 auto;
 
-  @media (max-width:768px) {
+  @media (max-width:820px) {
     max-width: 700px;
   }
 
@@ -32,4 +32,9 @@
 }
 .scroll-top{
   @include scroll-btn(100px);
+}
+.m-d-none{
+  @media (max-width:820px) {
+    display: none;
+  }
 }

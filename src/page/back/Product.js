@@ -8,7 +8,7 @@ function Product() {
   };
   return (
     <>
-      <div className="container">
+      <div className="dashbord-product container">
         <section>
           <div className="search">
             <select name="" id="">
@@ -28,8 +28,8 @@ function Product() {
               <tr>
                 <th>類別</th>
                 <th>名稱</th>
-                <th>原價</th>
-                <th>特價</th>
+                <th className="m-d-none">原價</th>
+                <th>詳細</th>
                 <th>編輯</th>
               </tr>
             </thead>
@@ -37,16 +37,31 @@ function Product() {
               <tr>
                 <td>養肌系列</td>
                 <td>藻針</td>
-                <td>3000</td>
-                <td>3000</td>
+                <td className="m-d-none">3000</td>
                 <td>
-                  <button className="material-symbols-outlined">edit</button>
+                  <button className="material-symbols-outlined">
+                    visibility
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className="material-symbols-outlined"
+                    onClick={handleClickOpenModal}
+                  >
+                    edit
+                  </button>
                   <button className="material-symbols-outlined">delete</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </section>
+        <div className="dashbord-reminder">
+          <p>
+            ✶ 特價商品顯示<span style={{ color: "#99dd00" }}>綠色</span>價格
+          </p>
+          <p>✶ 未啟用<span style={{ color: "#ccc" }}>灰色</span>文字</p>
+        </div>
         <div>
           <button
             className="dashbord-add material-symbols-outlined"

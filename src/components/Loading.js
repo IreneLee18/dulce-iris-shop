@@ -7,9 +7,9 @@ function Loading() {
   const [size, setSize] = useState(80);
   // 調整loading大小
   window.addEventListener("resize", () => {
-    if (window.screen.width <= 375) {
+    if (window.screen.width <= 414) {
       setSize(() => 30);
-    } else if (window.screen.width <= 768 && window.screen.width > 375) {
+    } else if (window.screen.width <= 820 && window.screen.width > 414) {
       setSize(() => 50);
     } else {
       setSize(() => 80);
