@@ -1,29 +1,212 @@
 const headers = { "Content-Type": "application/json" };
+const token = document.cookie.replace(
+  /(?:(?:^|.*;\s*)myToken\s*=\s*([^;]*).*$)|^.*$/,
+  "$1"
+);
+const headersAuth = { ...headers, Authorization: token };
 export const loginAPI = (data) => {
   return fetch(`${process.env.REACT_APP_API}/admin/signin`, {
     method: "POST",
     headers,
     body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
+  }).then((res) => res.json());
 };
-// [API]: /admin/signin
-// [方法]: post
-// [參數]:
-//   {
-//     "username": "hexscholl@test.com",
-//     "password": "zzxxccvv"
-//   }
-// [成功回應]:
-//   {
-//     "success": true,
-//     "message": "登入成功",
-//     "uid": "XX4VbV87lRRBXKhZKT7YX6zhsuO2",
-//     "token": "xxx"
-//     "expired": "1234567890"
-//   }
-// [失敗回應]:
-//   {
-//     "success": false,
-//     "message": "登入失敗"
-//   }
+
+//product
+export const getProduct = (page) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/products?page=${page}`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const addProduct = (data) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/product`,
+    {
+      method: "POST",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const editProduct = (data, id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/product/${id}`,
+    {
+      method: "PUT",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const deleteProduct = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/product/${id}`,
+    {
+      method: "DELETE",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+//upload Image
+export const uploadImage = (formData) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/upload`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: formData,
+    }
+  ).then((res) => res.json());
+};
+// order
+export const getOrder = (page) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/orders?page=${page}`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const editOrder = (data, id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/order/${id}`,
+    {
+      method: "PUT",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const deleteOrder = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/order/${id}`,
+    {
+      method: "DELETE",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const deleteAllOrder = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/orders/all`,
+    {
+      method: "DELETE",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+//coupon
+export const getCoupon = (page) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/coupons?page=${page}`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const addCoupon = (data) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/coupon`,
+    {
+      method: "POST",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const editCoupon = (data, id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/coupon/${id}`,
+    {
+      method: "PUT",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const deleteCoupon = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/coupon/${id}`,
+    {
+      method: "DELETE",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+//article
+export const getArticle = (page) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/articles?page=${page}`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const addArticle = (data) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article`,
+    {
+      method: "POST",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const editArticle = (data, id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article/${id}`,
+    {
+      method: "PUT",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};
+
+export const deleteArticle = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article/${id}`,
+    {
+      method: "DELETE",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+// userProduct
+export const getProductsData = (page) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/products?page=${page}`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+export const getProductData = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/product/${id}`
+  ).then((res) => res.json());
+};

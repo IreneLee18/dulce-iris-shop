@@ -76,3 +76,5 @@ export const sliderData = [
     id: "home",
   },
 ];
+
+export const categoryID = [ "養肌課程", "睫毛課程","居家保養"]
