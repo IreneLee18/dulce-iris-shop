@@ -11,11 +11,10 @@ function Product() {
   const navigate = useNavigate();
   const productViewModalRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
-  const [allProduct, setAllProduct] = useState([]);
-  const [allPagination, setAllPagination] = useState([]);
+  const allProduct = useRef([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(10);
   const [pageData, setPageData] = useState([]);
+  const perPageData = useRef(8)
   // 存放要開啟的product data
   const [productData, setProductData] = useState(null);
   const handleClickOpenModal = (e) => {
@@ -28,44 +27,41 @@ function Product() {
     });
   };
   // change pageData
-  const handleChangePageData = useCallback(async (current) => {
-    try {
-      const max = current * perPage;
-      const min = max - perPage + 1;
-      console.log(currentPage)
-      await setPageData(
-        allProduct.filter((data, index) => index + 1 >= min && index + 1 <= max)
+  const handleChangePageData = useCallback(
+    (current) => {
+      const max = current * perPageData.current;
+      const min = max - perPageData.current + 1;
+      setPageData(
+        allProduct.current.filter(
+          (data, index) => index + 1 >= min && index + 1 <= max
+        )
       );
-      await setIsLoading(()=>false);
-    } catch (err) {
-      console.error(err);
-    }
-  }, [allProduct, perPage]);
+    },
+    [allProduct]
+  );
   useLayoutEffect(() => {
-    getProductAll().then(async(res) => {
-      try{
+    getProductAll().then(async (res) => {
+      try {
         const data = [];
         Object.entries(res.products).forEach((item) => data.push(item[1]));
-        setAllProduct(data);
-        const page = {
-          current_page: currentPage,
-          has_next: Math.ceil(data.length / perPage) > 1 ? true : false,
-          has_pre: false,
-          total_pages: Math.ceil(data.length / perPage),
-        };
-        await handleChangePageData(currentPage);
-        await setAllPagination(page);
-      }catch(err){
-        console.error(err)
+        allProduct.current = data;
+        await setIsLoading(() => false);
+      } catch (err) {
+        console.error(err);
       }
     });
-  }, [allProduct.length, currentPage, handleChangePageData, perPage]);
+  }, [pageData, currentPage, handleChangePageData]);
+  useLayoutEffect(() => {
+    if (!isLoading) {
+      handleChangePageData(currentPage);
+    }
+  }, [isLoading, handleChangePageData, currentPage]);
 
   const handleClickDelete = (e) => {
     deleteProduct(e.target.id).then((res) => {
       if (res.success) {
         sweetAlert("success", "刪除成功");
-        setAllProduct(allProduct.filter((item) => item.id !== e.target.id));
+        setPageData(pageData.filter((item) => item.id !== e.target.id));
       }
     });
   };
@@ -158,7 +154,9 @@ function Product() {
             </section>
             <section className="dashboard-pagination">
               <Pagination
-                pagination={allPagination}
+                perPage={perPageData.current}
+                data={allProduct.current}
+                currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
               />
             </section>
