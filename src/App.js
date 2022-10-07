@@ -8,7 +8,7 @@ import Dashboard from "./page/back/Layout/Dashboard";
 import Product from "./page/back/Product/Product";
 import CreateProduct from "./page/back/Product/CreateProduct";
 import Order from "./page/back/Order";
-import Coupon from "./page/back/Coupon";
+import Coupon from "./page/back/Coupon/Coupon";
 import Article from "./page/back/Article";
 function App() {
   return (

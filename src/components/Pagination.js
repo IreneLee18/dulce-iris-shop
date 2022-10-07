@@ -1,11 +1,33 @@
 import { useState, useEffect } from "react";
-function Pagination({ perPage, data, currentPage, setCurrentPage }) {
+function Pagination({
+  perPage,
+  allData,
+  searchData,
+  currentPage,
+  setCurrentPage,
+}) {
   const [pagination, setPagination] = useState({
     current_page: currentPage,
-    has_next: Math.ceil(data.length / perPage) > 1 ? true : false,
+    has_next: Math.ceil(allData.length / perPage) > 1 ? true : false,
     has_pre: false,
-    total_pages: Math.ceil(data.length / perPage),
+    total_pages: Math.ceil(allData.length / perPage),
   });
+  const [totalPage, setTotalPage] = useState(
+    Math.ceil(allData.length / perPage)
+  );
+
+  useEffect(() => {
+    if (searchData.length !== 0 && searchData !== undefined) {
+      setTotalPage(Math.ceil(searchData.length / perPage));
+    } else {
+      setTotalPage(Math.ceil(allData.length / perPage));
+    }
+    setPagination((state) => ({
+      ...state,
+      has_next: totalPage > 1 ? true : false,
+      total_pages: totalPage,
+    }));
+  }, [allData.length, perPage, searchData, totalPage]);
 
   const pageNum = [...Array(pagination.total_pages).keys()].map(
     (item) => item + 1

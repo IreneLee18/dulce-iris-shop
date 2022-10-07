@@ -1,12 +1,22 @@
 import { useState } from "react";
+import {sweetAlert}from '../utils/SweetAlert'
 function DashboardSearch({ searchGroup, data, setPageData }) {
   const [searchSelect, setSearchSelect] = useState("DEFAULT");
   const [searchValue, setSearchValue] = useState("");
   const handleClick = () => {
     if (searchSelect !== "DEFAULT" && searchValue !== "") {
-      setPageData(data.filter((item) => item[searchSelect].includes(searchValue)));
-    }else{
-      setPageData([])
+      const filterData = data.filter((item) =>
+        item[searchSelect].includes(searchValue)
+      );
+      if (filterData.length !== 0) {
+        setPageData(filterData);
+      } else {
+        sweetAlert(`error`,`查無資料`,`${searchSelect}下沒有${searchValue}`);
+        setSearchValue('')
+        setPageData([]);
+      }
+    } else {
+      setPageData([]);
     }
   };
   return (
