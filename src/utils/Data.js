@@ -77,4 +77,27 @@ export const sliderData = [
   },
 ];
 
-export const categoryID = [ "養肌課程", "睫毛課程","居家保養"]
+export const categoryID = ["養肌課程", "睫毛課程", "居家保養"];
+
+export const dashboardProductSearch = [
+  {
+    id: "category",
+    value: "類別",
+  },
+  {
+    id: "title",
+    value: "名稱",
+  },
+  {
+    id: "id",
+    value: "ID",
+  },
+  {
+    id: "is_enabled",
+    value: "啟用",
+  },
+  {
+    id: "origin_price",
+    value: "特價",
+  },
+];

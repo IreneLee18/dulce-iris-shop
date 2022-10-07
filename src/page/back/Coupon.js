@@ -1,5 +1,5 @@
 // import TableFrom from '../../components/TableFrom'
-import ProductModal from "../../components/Modal/ProductModal";
+// import ProductModal from "../../components/Modal/Product/CreateProduct";
 import { useRef } from "react";
 function Coupon() {
   const productModalRef = useRef();
@@ -8,7 +8,7 @@ function Coupon() {
   };
   return (
     <>
-      <div className="dashbord-coupon container">
+      <div className="dashboard-coupon container">
         <section>
           <div className="search">
             <label htmlFor="search">
@@ -50,7 +50,7 @@ function Coupon() {
             </tbody>
           </table>
         </section>
-        <div className="dashbord-reminder">
+        <div className="dashboard-reminder">
           <p>
             ✶ 未付款顯示<span style={{ color: "#ff5f5f" }}>紅色</span>訂單編號
           </p>
@@ -60,7 +60,7 @@ function Coupon() {
         </div>
         <div>
           <button
-            className="dashbord-add material-symbols-outlined"
+            className="dashboard-add material-symbols-outlined"
             onClick={handleClickOpenModal}
           >
             add_circle
@@ -71,7 +71,6 @@ function Coupon() {
         </div>
       </div>
       <section>
-        <ProductModal ref={productModalRef} />
       </section>
     </>
   );

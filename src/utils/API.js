@@ -22,6 +22,15 @@ export const getProduct = (page) => {
     }
   ).then((res) => res.json());
 };
+export const getProductAll = () => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/products/all`,
+    {
+      method: "GET",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
 
 export const addProduct = (data) => {
   return fetch(

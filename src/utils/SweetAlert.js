@@ -12,7 +12,7 @@ export const sweetAlert = (icon, title, text) => {
   });
 };
 
-export const sweetAlert_question = (title, name) => {
+export const sweetAlert_question = (title) => {
   MySwal.fire({
     icon: "question",
     title,
@@ -20,16 +20,13 @@ export const sweetAlert_question = (title, name) => {
     confirmButtonText: "確定",
     cancelButtonText: `取消`,
   }).then((res) => {
-    if (res.isConfirmed && name === "logout") {
-      window.localStorage.setItem(name,true)
+    if (res.isConfirmed) {
       MySwal.fire({
         icon: "success",
         title:"登出成功！",
         text:"掰掰囉～記得再回來確認ToDoList唷！",
         showConfirmButton:false
       });
-    } else{
-      window.localStorage.setItem(name,false)
     }
   });
 };

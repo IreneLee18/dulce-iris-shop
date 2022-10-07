@@ -1,5 +1,5 @@
 // import TableFrom from '../../components/TableFrom'
-import ProductModal from "../../components/Modal/ProductModal";
+// import ProductModal from "../../components/Modal/Product/CreateProduct";
 import { useRef } from "react";
 function Order() {
   const productModalRef = useRef();
@@ -8,7 +8,7 @@ function Order() {
   };
   return (
     <>
-      <div className="dashbord-order container">
+      <div className="dashboard-order container">
         <section>
           <div className="search">
             <label htmlFor="search">
@@ -31,7 +31,7 @@ function Order() {
             <tbody>
               <tr>
                 <td>-L9u2EUkQSoEmW7QzGLF</td>
-                <td>李若羽<span> / 0931148229</span></td>
+                <td>kkk<span> / 0900000000</span></td>
                 <td className="m-d-none">YES</td>
                 <td>
                   <button className="material-symbols-outlined">visibility</button>
@@ -44,7 +44,7 @@ function Order() {
             </tbody>
           </table>
         </section>
-        <div className="dashbord-reminder">
+        <div className="dashboard-reminder">
           <p>
             ✶ 未付款顯示<span style={{ color: "#ff5f5f" }}>紅色</span>訂單編號
           </p>
@@ -52,7 +52,7 @@ function Order() {
         </div>
         <div>
           <button
-            className="dashbord-add material-symbols-outlined"
+            className="dashboard-add material-symbols-outlined"
             onClick={handleClickOpenModal}
           >
             add_circle
@@ -63,7 +63,7 @@ function Order() {
         </div>
       </div>
       <section>
-        <ProductModal ref={productModalRef} />
+        {/* <ProductModal ref={productModalRef} /> */}
       </section>
     </>
   );

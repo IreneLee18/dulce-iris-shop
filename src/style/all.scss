@@ -13,7 +13,9 @@
 @import '../page/front/Reserve/reserve';
 @import '../page/front/Reserve/Component/calendar';
 @import './scss/table';
-@import './scss/productTable';
+@import '../page/back/Product/product';
+@import '../page/back/Product/createProduct';
+@import '../components/Modal/Product/productView';
 @import './scss/modal';
-@import './scss/productView';
+@import './scss/pagination';
 

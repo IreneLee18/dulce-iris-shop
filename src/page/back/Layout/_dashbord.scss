@@ -1,8 +1,9 @@
-.dashbord-header {
+.dashboard-header {
   background: $light-brown;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100000;
 
   ul {
     display: flex;
@@ -40,7 +41,7 @@
   }
 }
 
-.dashbord-main {
+.dashboard-main {
   min-height: calc(100vh - 56px - 74px);
   padding-top: 74px;
 
@@ -49,7 +50,7 @@
   }
 }
 
-.dashbord-footer {
+.dashboard-footer {
   width: 100%;
   background: $light-brown;
   text-align: center;

@@ -69,7 +69,7 @@ function ProductViewModal({ productData }, ref) {
                     <div className="title">照片們：</div>
                     <div className="image-group">
                       {productData.imagesUrl.map((item) => (
-                        <img src={item} alt={item} />
+                        <img key={item.id} src={item.imageUrl} alt={item.id} />
                       ))}
                     </div>
                   </li>
@@ -86,8 +86,8 @@ function ProductViewModal({ productData }, ref) {
                   <li className="item">
                     <div className="description-title">產品資訊：</div>
                     <ul>
-                      {productData.descriptionInfo.map((item) => (
-                        <li className="info-item-group">
+                      {productData.descriptionInfo.map((item,index) => (
+                        <li className="info-item-group" key={index}>
                           <div className="info-title">{item.title}：</div>
                           <div>{item.content}</div>
                         </li>

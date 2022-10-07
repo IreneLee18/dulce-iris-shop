@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lighten($dark-brown, 35%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 10px;
+  }
+
+  button {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+
+    &:hover {
+      background: lighten($dark-brown, 40%);
+      color: #fff;
+    }
+  }
+
+  .active {
+    background: lighten($light-brown, 10%);
+    color: #fff;
+  }
+
+  .disabled {
+    cursor: no-drop;
+
+    &:hover {
+      background: lighten($dark-brown, 35%);
+      color: $dark-brown;
+    }
+  }
+
+  .material-icons-outlined {
+    font-size: 36px;
+  }
+}
