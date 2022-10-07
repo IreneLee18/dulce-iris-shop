@@ -9,6 +9,7 @@ import Product from "./page/back/Product/Product";
 import CreateProduct from "./page/back/Product/CreateProduct";
 import Order from "./page/back/Order";
 import Coupon from "./page/back/Coupon/Coupon";
+import CreateCoupon from "./page/back/Coupon/CreateCoupon";
 import Article from "./page/back/Article";
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="back/dashboard" element={<Dashboard />}>
-          <Route path="product" element={<Product />} />
+          <Route path="products" element={<Product />} />
           <Route path="product/:ID" element={<CreateProduct />} />
           <Route path="orders" element={<Order />} />
           <Route path="coupons" element={<Coupon />} />
+          <Route path="order/:ID" element={<CreateProduct />} />
           <Route path="articles" element={<Article />} />
         </Route>
       </Routes>

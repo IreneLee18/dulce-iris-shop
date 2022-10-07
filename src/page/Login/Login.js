@@ -42,7 +42,7 @@ function Login() {
         const { token, expired } = res;
         document.cookie = `myToken=${token};expires=${new Date(expired)}`;
         // console.log(token, expired, new Date(expired)); // 在設定之前可以先看是否有取得到資料
-        navigate("/back/dashboard/product");
+        navigate("/back/dashboard/products");
         console.log(res)
       }
     });

@@ -94,7 +94,7 @@ const CreateProduct = () => {
             if (res.success) {
               sweetAlert("success", "新增成功");
               setTimeout(() => {
-                navigate("/back/dashboard/product");
+                navigate("/back/dashboard/products");
               }, [3000]);
             }
           });
@@ -103,7 +103,7 @@ const CreateProduct = () => {
             if (res.success) {
               sweetAlert("success", "編輯成功");
               setTimeout(() => {
-                navigate("/back/dashboard/product");
+                navigate("/back/dashboard/products");
               }, [3000]);
             }
           });
@@ -273,7 +273,7 @@ const CreateProduct = () => {
                 </button>
                 <button
                   className="button"
-                  onClick={() => navigate("/back/dashboard/product")}
+                  onClick={() => navigate("/back/dashboard/products")}
                 >
                   CANCEL
                 </button>

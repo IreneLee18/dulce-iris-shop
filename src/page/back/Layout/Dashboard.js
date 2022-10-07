@@ -6,7 +6,7 @@ function Dashboard() {
     {
       title: "產品",
       englishTitle: "PRODUCT",
-      link: "/back/dashboard/product",
+      link: "/back/dashboard/products",
     },
     {
       title: "訂單",

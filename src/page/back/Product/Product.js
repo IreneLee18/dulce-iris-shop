@@ -174,7 +174,6 @@ function Product() {
             <section className="dashboard-pagination">
               <Pagination
                 perPage={perPageData.current}
-                // data={searchProduct!==[]?allProduct.current:searchProduct}
                 allData={allProduct.current}
                 searchData={searchProduct}
                 currentPage={currentPage}
