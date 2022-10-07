@@ -91,13 +91,5 @@ export const dashboardProductSearch = [
   {
     id: "id",
     value: "ID",
-  },
-  {
-    id: "is_enabled",
-    value: "啟用",
-  },
-  {
-    id: "origin_price",
-    value: "特價",
-  },
+  }
 ];

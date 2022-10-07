@@ -11,10 +11,15 @@ function Product() {
   const navigate = useNavigate();
   const productViewModalRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
+  // 儲存最原始所有資料
   const allProduct = useRef([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  // 儲存篩選資料
+  const [searchProduct,setSearchProduct] = useState([]);
+  // 儲存畫面資料
   const [pageData, setPageData] = useState([]);
-  const perPageData = useRef(8)
+  // 目前頁碼
+  const [currentPage, setCurrentPage] = useState(1);
+  const perPageData = useRef(8);
   // 存放要開啟的product data
   const [productData, setProductData] = useState(null);
   const handleClickOpenModal = (e) => {
@@ -31,13 +36,21 @@ function Product() {
     (current) => {
       const max = current * perPageData.current;
       const min = max - perPageData.current + 1;
-      setPageData(
-        allProduct.current.filter(
-          (data, index) => index + 1 >= min && index + 1 <= max
-        )
-      );
+      if(searchProduct.length===0){
+        setPageData(
+          allProduct.current.filter(
+            (data, index) => index + 1 >= min && index + 1 <= max
+          )
+        );
+      }else{
+        setPageData(
+          searchProduct.filter(
+            (data, index) => index + 1 >= min && index + 1 <= max
+          )
+        );
+      }
     },
-    [allProduct]
+    [searchProduct]
   );
   useLayoutEffect(() => {
     getProductAll().then(async (res) => {
@@ -75,7 +88,8 @@ function Product() {
             <section>
               <DashboardSearch
                 searchGroup={dashboardProductSearch}
-                data={allProduct}
+                data={allProduct.current}
+                setPageData={setSearchProduct}
               />
             </section>
             <section>
@@ -106,11 +120,16 @@ function Product() {
                     <div className="card-body">
                       <h5 className="card-title">{item.title}</h5>
                       <h5 className="card-id">
-                        <div className="title">ID：</div>
+                        <div className="title">
+                          ID
+                          <span>：</span>
+                        </div>
                         <div>{item.id}</div>
                       </h5>
                       <div className="card-price">
-                        <div className="title">價格：</div>
+                        <div className="title">
+                          價格<span>：</span>
+                        </div>
                         <div>
                           {item.price === item.origin_price ? (
                             <span>NT${item.price}</span>
