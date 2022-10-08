@@ -7,22 +7,22 @@ export const navAllLink = [
   {
     title: "所有商品",
     englishTitle: "SHOP ALL",
-    link: "/product",
+    link: "/products",
   },
   {
     title: "養肌課程",
     englishTitle: "FACE CARE COURSE",
-    link: "/product/face",
+    link: "/products/face",
   },
   {
     title: "睫毛課程",
     englishTitle: "EYELASH COURSE",
-    link: "/product/eye",
+    link: "/products/eye",
   },
   {
     title: "居家保養",
     englishTitle: "FACIAL CARE PRODUCTS",
-    link: "/product/home",
+    link: "/products/home",
   },
   {
     title: "預約時間",
@@ -43,19 +43,19 @@ export const navAllLink = [
 export const productLink = [
   {
     title: "全部商品",
-    link: "/product",
+    link: "/products",
   },
   {
     title: "養肌課程系列",
-    link: "/product/face",
+    link: "/products/face",
   },
   {
     title: "睫毛課程系列",
-    link: "/product/eye",
+    link: "/products/eye",
   },
   {
     title: "居家保養系列",
-    link: "/product/home",
+    link: "/products/home",
   },
 ];
 export const sliderData = [
@@ -91,5 +91,19 @@ export const dashboardProductSearch = [
   {
     id: "id",
     value: "ID",
+  }
+];
+export const dashboardCouponSearch = [
+  {
+    id: "title",
+    value: "名稱",
+  },
+  {
+    id: "percent",
+    value: "折扣％數",
+  },
+  {
+    id: "code",
+    value: "代碼",
   }
 ];

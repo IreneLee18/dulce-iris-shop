@@ -15,8 +15,8 @@ function Pagination({
   const [totalPage, setTotalPage] = useState(
     Math.ceil(allData.length / perPage)
   );
-
   useEffect(() => {
+    console.log(allData.length)
     if (searchData.length !== 0 && searchData !== undefined) {
       setTotalPage(Math.ceil(searchData.length / perPage));
     } else {
@@ -45,49 +45,51 @@ function Pagination({
 
   return (
     <>
-      <ul className="pagination">
-        <li>
-          <button
-            id="pre"
-            className={`material-icons-outlined ${
-              pagination.has_pre ? "" : "disabled"
-            }`}
-            onClick={() =>
-              setCurrentPage((state) => (state === 1 ? state : state - 1))
-            }
-          >
-            chevron_left
-          </button>
-        </li>
-        {pageNum.map((pageNum) => (
-          <li key={pageNum} id={pageNum}>
+      {pagination.total_pages > 1 ? (
+        <ul className="pagination">
+          <li>
             <button
-              className={pageNum === pagination.current_page ? "active" : ""}
-              value={pageNum}
-              onClick={(e) => setCurrentPage(Number(e.target.value))}
+              id="pre"
+              className={`material-icons-outlined ${
+                pagination.has_pre ? "" : "disabled"
+              }`}
+              onClick={() =>
+                setCurrentPage((state) => (state === 1 ? state : state - 1))
+              }
             >
-              {pageNum}
+              chevron_left
             </button>
           </li>
-        ))}
-        <li className={pagination.has_next ? "" : "disabled"}>
-          <button
-            id="next"
-            className={`material-icons-outlined ${
-              pagination.has_next ? "" : "disabled"
-            }`}
-            onClick={() =>
-              setCurrentPage((state) =>
-                state === pagination.total_pages
-                  ? pagination.total_pages
-                  : state + 1
-              )
-            }
-          >
-            chevron_right
-          </button>
-        </li>
-      </ul>
+          {pageNum.map((pageNum) => (
+            <li key={pageNum} id={pageNum}>
+              <button
+                className={pageNum === pagination.current_page ? "active" : ""}
+                value={pageNum}
+                onClick={(e) => setCurrentPage(Number(e.target.value))}
+              >
+                {pageNum}
+              </button>
+            </li>
+          ))}
+          <li className={pagination.has_next ? "" : "disabled"}>
+            <button
+              id="next"
+              className={`material-icons-outlined ${
+                pagination.has_next ? "" : "disabled"
+              }`}
+              onClick={() =>
+                setCurrentPage((state) =>
+                  state === pagination.total_pages
+                    ? pagination.total_pages
+                    : state + 1
+                )
+              }
+            >
+              chevron_right
+            </button>
+          </li>
+        </ul>
+      ) : null}
     </>
   );
 }

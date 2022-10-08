@@ -14,7 +14,7 @@ function Product() {
   // 儲存最原始所有資料
   const allProduct = useRef([]);
   // 儲存篩選資料
-  const [searchProduct,setSearchProduct] = useState([]);
+  const [searchProduct, setSearchProduct] = useState([]);
   // 儲存畫面資料
   const [pageData, setPageData] = useState([]);
   // 目前頁碼
@@ -25,7 +25,7 @@ function Product() {
   const handleClickOpenModal = (e) => {
     const { id } = e.target;
     productViewModalRef.current.openViewModal();
-    allProduct.forEach((item) => {
+    allProduct.current.forEach((item) => {
       if (item.id === id) {
         setProductData(item);
       }
@@ -36,13 +36,13 @@ function Product() {
     (current) => {
       const max = current * perPageData.current;
       const min = max - perPageData.current + 1;
-      if(searchProduct.length===0){
+      if (searchProduct.length === 0) {
         setPageData(
           allProduct.current.filter(
             (data, index) => index + 1 >= min && index + 1 <= max
           )
         );
-      }else{
+      } else {
         setPageData(
           searchProduct.filter(
             (data, index) => index + 1 >= min && index + 1 <= max
@@ -64,20 +64,23 @@ function Product() {
       }
     });
   }, [pageData, currentPage, handleChangePageData]);
-  useLayoutEffect(() => {
-    if (!isLoading) {
-      handleChangePageData(currentPage);
-    }
-  }, [isLoading, handleChangePageData, currentPage]);
-
   const handleClickDelete = (e) => {
     deleteProduct(e.target.id).then((res) => {
       if (res.success) {
         sweetAlert("success", "刪除成功");
-        setPageData(pageData.filter((item) => item.id !== e.target.id));
+        allProduct.current = allProduct.current.filter(
+          (item) => item.id !== e.target.id
+        );
+        setPageData(allProduct.current);
       }
     });
   };
+  useLayoutEffect(() => {
+    if (!isLoading) {
+      handleChangePageData(currentPage);
+    }
+  }, [isLoading, handleChangePageData, currentPage, pageData.length]);
+
   return (
     <>
       {isLoading ? (

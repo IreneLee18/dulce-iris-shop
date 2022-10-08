@@ -1,0 +1,59 @@
+.dashboard-coupon {
+  .dashboard-search {
+    justify-content: end;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid darken($light-brown, 10%);
+
+
+    thead {
+      width: 100%;
+      background: $light-brown;
+    }
+
+    th {
+      padding: 10px 0;
+      width: 20%;
+      border-right: 1px solid darken($light-brown, 10%);
+
+      &:nth-child(3) {
+        width: 10%;
+      }
+
+      &:last-child {
+        border-right: none;
+        width: 10%;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid darken($light-brown, 10%);
+    }
+
+    td {
+      padding: 8px 0 10px;
+      text-align: center;
+      border-right: 1px solid darken($light-brown, 10%);
+
+      &:last-child {
+        border-right: none;
+        padding-bottom: 8px;
+      }
+
+      button {
+        font-size: 18px;
+        &:hover {
+          animation: flip .6s;
+          color: $danger;
+        }
+      }
+    }
+  }
+}
+
+.dashboard-pagination {
+  margin-bottom: 20px;
+}

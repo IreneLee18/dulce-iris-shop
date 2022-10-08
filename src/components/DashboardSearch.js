@@ -21,7 +21,7 @@ function DashboardSearch({ searchGroup, data, setPageData }) {
   };
   return (
     <>
-      <div className="search">
+      <div className="dashboard-search">
         <select
           name=""
           id=""

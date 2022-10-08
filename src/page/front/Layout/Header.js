@@ -26,14 +26,14 @@ function Header() {
             </Link>
           </li>
           <li className="nav-menu-allProduct">
-            <Link to="/product">
+            <Link to="/products">
               <span>所有商品</span>
               <span>SHOP ALL</span>
             </Link>
             <div className="nav-shop">
               <ul>
                 <li>
-                  <p className="nav-shop-title" to="/product">
+                  <p className="nav-shop-title">
                     品牌主打
                   </p>
                   <ul className="nav-shop-item">

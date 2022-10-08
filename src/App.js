@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./page/front/Layout/Layout";
 import Home from "./page/front/Home/Home";
+import Products from "./page/front/Product/Products";
+import ProductDetail from "./page/front/Product/ProductDetail";
 import About from "./page/front/About/About";
 import Reserve from "./page/front/Reserve/Reserve";
 import Login from "./page/Login/Login";
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:ID" element={<ProductDetail />} />
           <Route path="about" element={<About />} />
           <Route path="reserve" element={<Reserve />} />
         </Route>
@@ -26,7 +30,7 @@ function App() {
           <Route path="product/:ID" element={<CreateProduct />} />
           <Route path="orders" element={<Order />} />
           <Route path="coupons" element={<Coupon />} />
-          <Route path="order/:ID" element={<CreateProduct />} />
+          <Route path="coupon/:ID" element={<CreateCoupon />} />
           <Route path="articles" element={<Article />} />
         </Route>
       </Routes>
