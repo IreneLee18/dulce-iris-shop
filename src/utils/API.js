@@ -205,9 +205,9 @@ export const deleteArticle = (id) => {
 };
 
 // userProduct
-export const getProductsData = (page) => {
+export const getProductsData = ()=> {
   return fetch(
-    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/products?page=${page}`,
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/products/all`,
     {
       method: "GET",
       headers: headersAuth,

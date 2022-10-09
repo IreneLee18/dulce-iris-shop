@@ -4,6 +4,7 @@ import DashboardSearch from "../../../components/DashboardSearch";
 import Pagination from "../../../components/Pagination";
 import { getProductAll, deleteProduct } from "../../../utils/API";
 import { sweetAlert } from "../../../utils/SweetAlert";
+import currency from "../../../utils/Currency";
 import { dashboardProductSearch } from "../../../utils/Data";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -135,12 +136,12 @@ function Product() {
                         </div>
                         <div>
                           {item.price === item.origin_price ? (
-                            <span>NT${item.price}</span>
+                            <span>NT${currency(item.price)}</span>
                           ) : (
                             <>
-                              <span>NT${item.origin_price}</span>
+                              <span>NT${currency(item.origin_price)}</span>
                               <span className="haveDiscountPrice">
-                                NT${item.price}
+                                NT${currency(item.price)}
                               </span>
                             </>
                           )}

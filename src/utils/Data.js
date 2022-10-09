@@ -7,22 +7,22 @@ export const navAllLink = [
   {
     title: "所有商品",
     englishTitle: "SHOP ALL",
-    link: "/products",
+    link: "/products/所有商品",
   },
   {
     title: "養肌課程",
     englishTitle: "FACE CARE COURSE",
-    link: "/products/face",
+    link: "/products/養肌課程",
   },
   {
     title: "睫毛課程",
     englishTitle: "EYELASH COURSE",
-    link: "/products/eye",
+    link: "/products/睫毛課程",
   },
   {
     title: "居家保養",
     englishTitle: "FACIAL CARE PRODUCTS",
-    link: "/products/home",
+    link: "/products/居家保養",
   },
   {
     title: "預約時間",
@@ -43,37 +43,41 @@ export const navAllLink = [
 export const productLink = [
   {
     title: "全部商品",
-    link: "/products",
+    id: "所有商品",
+    link: "/products/所有商品",
   },
   {
     title: "養肌課程系列",
-    link: "/products/face",
+    id: "養肌課程",
+    link: "/products/養肌課程",
   },
   {
     title: "睫毛課程系列",
-    link: "/products/eye",
+    id: "睫毛課程",
+    link: "/products/睫毛課程",
   },
   {
     title: "居家保養系列",
-    link: "/products/home",
+    id: "居家保養",
+    link: "/products/居家保養",
   },
 ];
 export const sliderData = [
   {
     src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    id: "all",
+    id: "所有商品",
   },
   {
     src: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    id: "face",
+    id: "養肌課程",
   },
   {
     src: "https://images.unsplash.com/photo-1492618269284-653dce58fd6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80",
-    id: "eye",
+    id: "睫毛課程",
   },
   {
     src: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    id: "home",
+    id: "居家保養",
   },
 ];
 
@@ -91,7 +95,7 @@ export const dashboardProductSearch = [
   {
     id: "id",
     value: "ID",
-  }
+  },
 ];
 export const dashboardCouponSearch = [
   {
@@ -105,5 +109,5 @@ export const dashboardCouponSearch = [
   {
     id: "code",
     value: "代碼",
-  }
+  },
 ];

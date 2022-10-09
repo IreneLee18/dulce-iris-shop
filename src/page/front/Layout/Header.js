@@ -26,7 +26,7 @@ function Header() {
             </Link>
           </li>
           <li className="nav-menu-allProduct">
-            <Link to="/products">
+            <Link to="/products/所有商品">
               <span>所有商品</span>
               <span>SHOP ALL</span>
             </Link>
