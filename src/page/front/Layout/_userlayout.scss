@@ -121,6 +121,45 @@
     }
 
   }
+  .cart{
+    &:hover{
+      .cart-items{
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &-items{
+      width: 300px;
+      max-height: 280px;
+      overflow: scroll;
+      position: absolute;
+      top: 65px;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      background: lighten(rgba(167, 147, 135, .95), 5%);
+      box-shadow: 0 0 20px $light-brown;
+      transition: .7s all;
+      p{
+        padding: 20px;
+        text-align: center;
+      }
+    }
+    ul{
+      flex-direction: column;
+      padding: 10px 0;
+      li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        div{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
 
 .sm-nav-menu {

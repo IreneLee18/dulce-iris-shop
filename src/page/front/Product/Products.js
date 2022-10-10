@@ -1,9 +1,6 @@
-import { useNavigate, useParams,Link } from "react-router-dom";
-import {
-  useState,
-  useLayoutEffect,
-  useCallback,
-} from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { useState, useLayoutEffect, useCallback, useContext } from "react";
+import { DataContext } from "../../../utils/Context";
 import Pagination from "../../../components/Pagination";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import { getProductsData } from "../../../utils/API";
@@ -11,21 +8,22 @@ import currency from "../../../utils/Currency";
 function Products() {
   const navigate = useNavigate();
   const { ID } = useParams();
+  const { handleClickAddCart } = useContext(DataContext);
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [pageProduct, setPageProduct] = useState([]);
   const [searchProduct, setSearchProduct] = useState([]);
   const [perPage, setPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
-  useLayoutEffect(()=>{
-    setIsLoading(()=>true)
-  },[ID])
+
+  useLayoutEffect(() => {
+    setIsLoading(() => true);
+  }, [ID]);
   useLayoutEffect(() => {
     getProductsData().then((res) => {
-      console.log(ID);
       const data = res.products.filter((item) => item.category === ID);
       if (ID !== "所有商品") {
-        setCurrentPage(1)
+        setCurrentPage(1);
         setProducts(data);
         if (data.length === 0) {
           sweetAlert(
@@ -66,6 +64,9 @@ function Products() {
       handleChangePageData(currentPage);
     }
   }, [isLoading, handleChangePageData, currentPage]);
+  const handleClickAddHeart = (e) => {
+    console.log("add");
+  };
   return (
     <>
       <div className="user-product">
@@ -88,16 +89,18 @@ function Products() {
                     chevron_right
                   </span>
                 </li>
-                <li>
-                  {ID}
-                </li>
+                <li>{ID}</li>
               </>
             )}
           </ul>
         </section>
         <section>
           <div className="user-product-group container">
-            {isLoading ? <div className="isLoading"><p>讀取資料中請稍候...</p></div> : (
+            {isLoading ? (
+              <div className="isLoading">
+                <p>讀取資料中請稍候...</p>
+              </div>
+            ) : (
               <>
                 <ul>
                   {pageProduct.map((item) => (
@@ -139,6 +142,7 @@ function Products() {
                         <span
                           id={item.id}
                           className="material-symbols-outlined"
+                          onClick={handleClickAddHeart}
                         >
                           heart_plus
                         </span>
@@ -151,6 +155,7 @@ function Products() {
                         <span
                           id={item.id}
                           className="material-symbols-outlined"
+                          onClick={handleClickAddCart}
                         >
                           add_shopping_cart
                         </span>

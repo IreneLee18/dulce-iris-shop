@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { DataContext } from "../../../utils/Context";
 import { navAllLink, productLink } from "../../../utils/Data";
+import currency from "../../../utils/Currency";
 
 function Header() {
   const navLink = navAllLink.slice(5, 8);
   const [navToggle, setNavToggle] = useState(false);
   const navToggleDisplay = [{ left: "0px" }, { left: "-900px" }];
+  const { cart, handleClickDelete } = useContext(DataContext);
+
   return (
     <header className="user-header">
       <div className="container flex-jcsb">
@@ -33,9 +37,7 @@ function Header() {
             <div className="nav-shop">
               <ul>
                 <li>
-                  <p className="nav-shop-title">
-                    品牌主打
-                  </p>
+                  <p className="nav-shop-title">品牌主打</p>
                   <ul className="nav-shop-item">
                     {productLink.map((item) => (
                       <li key={item.title}>
@@ -65,8 +67,37 @@ function Header() {
           ))}
         </ul>
         <ul className="nav-icons">
-          <li className="material-symbols-outlined">favorite</li>
-          <li className="material-symbols-outlined">shopping_cart</li>
+          <li className="heart">
+            <span className="material-symbols-outlined">favorite</span>
+          </li>
+          <li className="cart">
+            <span className="material-symbols-outlined">shopping_cart</span>
+            <div className="cart-items">
+              {cart !== undefined && cart.length !== 0 ? (
+                <ul>
+                  {cart !== undefined &&
+                    cart.map((item) => (
+                      <li key={item.product.id}>
+                        <div>
+                          <Link to={`/product/detail/${item.product.id}`}>
+                            <span className="cart-title">{item.product.title}</span>
+                          </Link>
+                          <span>x</span>
+                          <span>{currency(item.qty)}</span>
+                        </div>
+                        <div
+                          className="material-symbols-outlined"
+                          id={item.id}
+                          onClick={handleClickDelete}
+                        >
+                          delete
+                        </div>
+                      </li>
+                    ))}
+                </ul>
+              ) : <p>目前購物車是空的唷～<br/><br/>請去新增點東西</p>}
+            </div>
+          </li>
         </ul>
       </div>
       <div

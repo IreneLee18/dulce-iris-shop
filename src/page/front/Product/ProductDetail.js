@@ -1,12 +1,15 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useContext } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { DataContext } from "../../../utils/Context";
 import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
 function ProductDetail() {
   const navigate = useNavigate();
+  const { handleClickAddCart, qty, setQty } = useContext(DataContext);
   const { ID } = useParams();
   const [productDetail, setProductDetail] = useState([]);
   const [suggestionProduct, setSuggestionProduct] = useState([]);
+  // const [qty, setQty] = useState(1);
   useLayoutEffect(() => {
     getProductsData().then((res) => {
       const data = res.products.filter((item) => item.id === ID);
@@ -109,11 +112,35 @@ function ProductDetail() {
               <div className="footer">
                 <div className="cart">
                   <label className="quantity">
-                    <button>+</button>
-                    <input type="number" />
-                    <button>-</button>
+                    <button
+                      onClick={() =>
+                        setQty((state) =>
+                          Number(state) === 1
+                            ? Number(state)
+                            : Number(state) - 1
+                        )
+                      }
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      value={qty}
+                      onChange={(e) => setQty(Number(qty))}
+                    />
+                    <button
+                      onClick={() => setQty((state) => Number(state) + 1)}
+                    >
+                      +
+                    </button>
                   </label>
-                  <button className="addCart">加入購物車</button>
+                  <button
+                    className="addCart"
+                    id={ID}
+                    onClick={handleClickAddCart}
+                  >
+                    加入購物車
+                  </button>
                 </div>
                 <div className="icon-btnGroup">
                   <div className="like">
