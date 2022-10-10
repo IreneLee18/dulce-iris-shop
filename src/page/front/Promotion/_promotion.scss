@@ -1,0 +1,204 @@
+.promotion {
+  h1 {
+    font-size: 36px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #000;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  &-wheel {
+    padding-top: 60px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 10px $dark-brown;
+      padding: 0 20px 40px 10px;
+
+      p {
+        font-size: 56px;
+        position: relative;
+        width: 60%;
+        line-height: 1.5;
+
+        &::after {
+          content: '☞☞☞☞☞';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &-spin-the-wheel {
+    width: 300px;
+    height: 300px;
+
+    &-outside {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px $dark-brown;
+      position: relative;
+      overflow: hidden;
+      margin: 20px 0;
+      transform: rotate(-30deg);
+
+      li {
+        position: absolute;
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+        width: 100%;
+        height: 100%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          transform-origin: right center;
+          transform: rotate(60deg);
+        }
+
+        &:nth-child(odd) {
+          &:before {
+            background: rgba(167, 147, 135, .3);
+          }
+        }
+
+        &:nth-child(even) {
+          &:before {
+            background: rgba(167, 147, 135, .7);
+          }
+        }
+
+        div {
+          height: 50%;
+          transform: rotate(30deg);
+          transform-origin: bottom center;
+          text-align: center;
+          padding-top: 20px;
+          font-size: 46px;
+        }
+      }
+    }
+
+    &-pointer {
+      width: 25%;
+      height: 25%;
+      border-radius: 50%;
+      background: $light-brown;
+      @include absolute-center;
+
+      &:before {
+        content: 'PRESS';
+        @include absolute-center;
+      }
+    }
+
+    &-hand {
+      width: 100%;
+      height: 200%;
+      @include absolute-center;
+      background: $light-brown;
+      z-index: -1;
+      clip-path: polygon(50% 0%, 0 50%, 100% 50%);
+      transition: transform 4s cubic-bezier(.5, .1, .15, 1);
+    }
+
+  }
+
+  &-stored {
+
+    &-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px $dark-brown;
+    }
+
+    &-item {
+      width: 50%;
+      position: relative;
+      padding: 10px 0 10px 200px;
+
+      h3 {
+        position: absolute;
+        font-size: 28px;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .give {
+        font-size: 64px;
+        left: -50px;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+          &::before {
+            animation: flip .7s;
+          }
+        }
+
+        &:before {
+          content: '♥︎';
+          position: absolute;
+          color: $danger;
+          z-index: -1;
+          font-size: 204px;
+          top: -110%;
+          left: -100%;
+        }
+      }
+
+      li {
+        font-size: 48px;
+        margin-bottom: 10px;
+
+        span {
+          font-size: 24px;
+          color: $light-brown;
+        }
+      }
+    }
+  }
+
+  &-notice {
+    box-shadow: 0 0 10px $dark-brown;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-bottom: 10px;
+      width: 50%;
+      font-size: 20px;
+
+      span {
+        text-shadow: 1px 1px 1px $light-brown;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Layout from "./page/front/Layout/Layout";
 import Home from "./page/front/Home/Home";
 import Products from "./page/front/Product/Products";
 import ProductDetail from "./page/front/Product/ProductDetail";
+import Promotion from "./page/front/Promotion/Promotion";
 import About from "./page/front/About/About";
 import Reserve from "./page/front/Reserve/Reserve";
 import Login from "./page/Login/Login";
@@ -19,8 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-            <Route path="products/:ID" element={<Products />} />
-            <Route path="product/detail/:ID" element={<ProductDetail />} />
+          <Route path="products/:ID" element={<Products />} />
+          <Route path="product/detail/:ID" element={<ProductDetail />} />
+          <Route path="promotion" element={<Promotion />} />
           <Route path="about" element={<About />} />
           <Route path="reserve" element={<Reserve />} />
         </Route>

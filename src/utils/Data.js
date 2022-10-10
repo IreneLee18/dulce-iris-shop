@@ -30,9 +30,9 @@ export const navAllLink = [
     link: "/reserve",
   },
   {
-    title: "優惠卷",
-    englishTitle: "Coupons",
-    link: "/coupons",
+    title: "促銷方案",
+    englishTitle: "Promotion",
+    link: "/promotion",
   },
   {
     title: "訂單查詢",
@@ -82,6 +82,45 @@ export const sliderData = [
 ];
 
 export const categoryID = ["養肌課程", "睫毛課程", "居家保養"];
+
+export const wheelData = [
+  {
+    id:'no1',
+    title:'x',
+    code:'銘謝惠顧',
+    rotateDeg:'rotate(0deg)'
+  },
+  {
+    id:'85',
+    title:'?',
+    code:'85discount',
+    rotateDeg:'rotate(60deg)'
+  },
+  {
+    id:'no2',
+    title:'x',
+    code:'銘謝惠顧',
+    rotateDeg:'rotate(120deg)'
+  },
+  {
+    id:'95',
+    title:'?',
+    code:'95discount',
+    rotateDeg:'rotate(180deg)'
+  },
+  {
+    id:'no3',
+    title:'x',
+    code:'銘謝惠顧',
+    rotateDeg:'rotate(240deg)'
+  },
+  {
+    id:'90',
+    title:'?',
+    code:'90discount',
+    rotateDeg:'rotate(300deg)'
+  }
+]
 
 export const dashboardProductSearch = [
   {
