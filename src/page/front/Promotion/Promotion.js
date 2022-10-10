@@ -20,16 +20,20 @@ function Promotion() {
     const perDeg = 360 / 6;
     const moreDeg = startDeg % 360;
     const picked = Math.floor(Math.random() * 6);
-    const getCode = wheelData[picked]
+    const getCode = wheelData[picked];
     const currentDeg = 1800 + startDeg + picked * perDeg - moreDeg;
     setDeg(currentDeg);
     setStartDeg(currentDeg);
     setTimeout(() => {
       setIsStart(() => false);
-      if(picked===0||picked===2||picked===4){
-        sweetAlert('success',`${getCode.code}`)
-      }else{
-        sweetAlert('success',`恭喜您獲得${getCode.id}%折扣`,`代碼：${getCode.code}`)
+      if (picked === 0 || picked === 2 || picked === 4) {
+        sweetAlert("success", `${getCode.code}`);
+      } else {
+        sweetAlert(
+          "success",
+          `恭喜您獲得${getCode.id}%折扣`,
+          `代碼：${getCode.code}`
+        );
       }
     }, [4000]);
   }, [startDeg]);
@@ -46,7 +50,13 @@ function Promotion() {
         <section className="promotion-wheel">
           <h2>轉盤抽抽樂</h2>
           <div className="promotion-wheel-item">
-            <p>HEY!<br/>來碰個運氣<br/>抽抽看唄～～～</p>
+            <p>
+              HEY!
+              <br />
+              來碰個運氣
+              <br />
+              抽抽看唄～
+            </p>
             <div className="promotion-spin-the-wheel">
               <div className="promotion-spin-the-wheel-outside">
                 <ul className="promotion-spin-the-wheel-inner">
@@ -82,7 +92,7 @@ function Promotion() {
           <ul className="promotion-stored-group">
             <li className="promotion-stored-item">
               <h3>
-                儲<br />值
+                儲<br className="d-sm-none" />值
               </h3>
               <ul>
                 <li>NT${currency(5000)}</li>

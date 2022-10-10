@@ -5,7 +5,7 @@ import { navAllLink, productLink } from "../../../utils/Data";
 function Header() {
   const navLink = navAllLink.slice(5, 8);
   const [navToggle, setNavToggle] = useState(false);
-  const navToggleDisplay = [{ left: "0px" }, { left: "-800px" }];
+  const navToggleDisplay = [{ left: "0px" }, { left: "-900px" }];
   return (
     <header className="user-header">
       <div className="container flex-jcsb">
