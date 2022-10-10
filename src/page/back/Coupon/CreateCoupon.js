@@ -89,7 +89,7 @@ const CreateCoupon = () => {
         <div className="createCoupon container">
           <div className="createCoupon-header">
             <h1>
-              {ID === "add" ? <span>新增</span> : <span>新增</span>}優惠卷
+              {ID === "add" ? <span>新增</span> : <span>編輯</span>}優惠卷
             </h1>
           </div>
           <div className="createCoupon-body">

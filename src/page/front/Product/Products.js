@@ -1,9 +1,7 @@
 import { useNavigate, useParams,Link } from "react-router-dom";
 import {
   useState,
-  useRef,
   useLayoutEffect,
-  useEffect,
   useCallback,
 } from "react";
 import Pagination from "../../../components/Pagination";
@@ -27,6 +25,7 @@ function Products() {
       console.log(ID);
       const data = res.products.filter((item) => item.category === ID);
       if (ID !== "所有商品") {
+        setCurrentPage(1)
         setProducts(data);
         if (data.length === 0) {
           sweetAlert(
@@ -80,7 +79,7 @@ function Products() {
               <span className="material-symbols-outlined">chevron_right</span>
             </li>
             <li>
-              <Link to="/products">所有商品</Link>
+              <Link to="/products/所有商品">所有商品</Link>
             </li>
             {ID === "所有商品" ? null : (
               <>

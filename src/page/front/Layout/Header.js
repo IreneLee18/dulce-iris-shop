@@ -44,14 +44,14 @@ function Header() {
                     ))}
                   </ul>
                 </li>
-                <li>
+                {/* <li>
                   <p className="nav-shop-title">優惠活動</p>
                   <ul className="nav-shop-item">
                     <li>
                       <Link to="/product/promotions">全部優惠活動</Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>
