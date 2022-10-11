@@ -796,6 +796,10 @@ input[type=checkbox]:checked:after {
   color: #fff;
 }
 
+.user-header .heart > span {
+  cursor: default;
+}
+
 .user-header .cart,
 .user-header .heart {
   position: relative;

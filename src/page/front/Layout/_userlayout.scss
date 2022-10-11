@@ -122,6 +122,10 @@
 
   }
 
+  .heart > span { 
+    cursor: default;
+  }
+
   .cart,
   .heart {
     position: relative;
