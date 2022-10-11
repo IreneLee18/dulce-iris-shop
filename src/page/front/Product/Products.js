@@ -8,14 +8,20 @@ import currency from "../../../utils/Currency";
 function Products() {
   const navigate = useNavigate();
   const { ID } = useParams();
-  const { handleClickAddCart } = useContext(DataContext);
+  const {
+    handleClickAddCart,
+    heart,
+    heartID,
+    handleClickAddHeart,
+    handleClickDeleteHeart,
+  } = useContext(DataContext);
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [pageProduct, setPageProduct] = useState([]);
   const [searchProduct, setSearchProduct] = useState([]);
   const [perPage, setPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [haveHeart,setHaveHeart]=useState(heart)
   useLayoutEffect(() => {
     setIsLoading(() => true);
   }, [ID]);
@@ -63,10 +69,8 @@ function Products() {
     if (!isLoading) {
       handleChangePageData(currentPage);
     }
-  }, [isLoading, handleChangePageData, currentPage]);
-  const handleClickAddHeart = (e) => {
-    console.log("add");
-  };
+    console.log(heart,heartID)
+  }, [isLoading, handleChangePageData, currentPage,heart]);
   return (
     <>
       <div className="user-product">
@@ -139,19 +143,23 @@ function Products() {
                         </div>
                       </div>
                       <div className="card-footer">
-                        <span
-                          id={item.id}
-                          className="material-symbols-outlined"
-                          onClick={handleClickAddHeart}
-                        >
-                          heart_plus
-                        </span>
-                        <span
-                          id={item.id}
-                          className="material-icons-outlined isLike"
-                        >
-                          favorite
-                        </span>
+                        {!heartID.includes(item.id) ? (
+                          <span
+                            id={item.id}
+                            className="material-symbols-outlined"
+                            onClick={handleClickAddHeart}
+                          >
+                            heart_plus
+                          </span>
+                        ) : (
+                          <span
+                            id={item.id}
+                            className="material-icons-outlined isLike"
+                            onClick={handleClickDeleteHeart}
+                          >
+                            favorite
+                          </span>
+                        )}
                         <span
                           id={item.id}
                           className="material-symbols-outlined"

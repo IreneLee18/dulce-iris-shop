@@ -8,7 +8,13 @@ function Header() {
   const navLink = navAllLink.slice(5, 8);
   const [navToggle, setNavToggle] = useState(false);
   const navToggleDisplay = [{ left: "0px" }, { left: "-900px" }];
-  const { cart, handleClickDelete } = useContext(DataContext);
+  const {
+    cart,
+    handleClickAddCart,
+    handleClickDeleteCart,
+    heart,
+    handleClickDeleteHeart,
+  } = useContext(DataContext);
 
   return (
     <header className="user-header">
@@ -69,6 +75,45 @@ function Header() {
         <ul className="nav-icons">
           <li className="heart">
             <span className="material-symbols-outlined">favorite</span>
+            <div className="heart-items">
+              {heart !== undefined && heart.length !== 0 ? (
+                <ul>
+                  {heart !== undefined &&
+                    heart.map((item) => (
+                      <li key={item.id}>
+                        <div>
+                          <Link to={`/product/detail/${item.id}`}>
+                            <span>{item.title}</span>
+                          </Link>
+                        </div>
+                        <div>
+                          <div
+                            className="material-symbols-outlined"
+                            id={item.id}
+                            onClick={handleClickAddCart}
+                          >
+                            shopping_cart
+                          </div>
+                          <div
+                            className="material-symbols-outlined"
+                            id={item.id}
+                            onClick={handleClickDeleteHeart}
+                          >
+                            delete
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                </ul>
+              ) : (
+                <p>
+                  目前沒有喜愛項目唷～
+                  <br />
+                  <br />
+                  請去新增點東西
+                </p>
+              )}
+            </div>
           </li>
           <li className="cart">
             <span className="material-symbols-outlined">shopping_cart</span>
@@ -80,7 +125,7 @@ function Header() {
                       <li key={item.product.id}>
                         <div>
                           <Link to={`/product/detail/${item.product.id}`}>
-                            <span className="cart-title">{item.product.title}</span>
+                            <span>{item.product.title}</span>
                           </Link>
                           <span>x</span>
                           <span>{currency(item.qty)}</span>
@@ -88,14 +133,21 @@ function Header() {
                         <div
                           className="material-symbols-outlined"
                           id={item.id}
-                          onClick={handleClickDelete}
+                          onClick={handleClickDeleteCart}
                         >
                           delete
                         </div>
                       </li>
                     ))}
                 </ul>
-              ) : <p>目前購物車是空的唷～<br/><br/>請去新增點東西</p>}
+              ) : (
+                <p>
+                  目前購物車是空的唷～
+                  <br />
+                  <br />
+                  請去新增點東西
+                </p>
+              )}
             </div>
           </li>
         </ul>

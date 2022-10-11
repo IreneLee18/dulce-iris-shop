@@ -121,8 +121,13 @@
     }
 
   }
-  .cart{
+
+  .cart,.heart{
     &:hover{
+      .heart-items{
+        visibility: visible;
+        opacity: 1;
+      }
       .cart-items{
         visibility: visible;
         opacity: 1;

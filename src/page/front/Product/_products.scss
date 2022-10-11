@@ -199,6 +199,10 @@
 
       .isLike {
         color: $danger;
+        transition: all .7s;
+        &:hover{
+          color: rgba(255, 95, 95,.3);
+        }
       }
     }
   }

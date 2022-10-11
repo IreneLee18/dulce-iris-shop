@@ -796,12 +796,17 @@ input[type=checkbox]:checked:after {
   color: #fff;
 }
 
-.user-header .cart:hover .cart-items {
+.user-header .cart:hover .heart-items, .user-header .heart:hover .heart-items {
   visibility: visible;
   opacity: 1;
 }
 
-.user-header .cart-items {
+.user-header .cart:hover .cart-items, .user-header .heart:hover .cart-items {
+  visibility: visible;
+  opacity: 1;
+}
+
+.user-header .cart-items, .user-header .heart-items {
   width: 300px;
   max-height: 280px;
   overflow: scroll;
@@ -817,12 +822,12 @@ input[type=checkbox]:checked:after {
   transition: .7s all;
 }
 
-.user-header .cart-items p {
+.user-header .cart-items p, .user-header .heart-items p {
   padding: 20px;
   text-align: center;
 }
 
-.user-header .cart ul {
+.user-header .cart ul, .user-header .heart ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -830,7 +835,7 @@ input[type=checkbox]:checked:after {
   padding: 10px 0;
 }
 
-.user-header .cart ul li {
+.user-header .cart ul li, .user-header .heart ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -843,7 +848,7 @@ input[type=checkbox]:checked:after {
   padding: 10px;
 }
 
-.user-header .cart ul li div {
+.user-header .cart ul li div, .user-header .heart ul li div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1169,6 +1174,12 @@ input[type=checkbox]:checked:after {
 
 .user-product .card-footer .isLike {
   color: #ff5f5f;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+
+.user-product .card-footer .isLike:hover {
+  color: rgba(255, 95, 95, 0.3);
 }
 
 .user-product-pagination {
