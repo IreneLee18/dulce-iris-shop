@@ -75,6 +75,7 @@ function Header() {
         <ul className="nav-icons">
           <li className="heart">
             <span className="material-symbols-outlined">favorite</span>
+            <div className="heart-count">{heart.length}</div>
             <div className="heart-items">
               {heart !== undefined && heart.length !== 0 ? (
                 <ul>
@@ -117,6 +118,7 @@ function Header() {
           </li>
           <li className="cart">
             <span className="material-symbols-outlined">shopping_cart</span>
+            <div className="cart-count">{cart.length}</div>
             <div className="cart-items">
               {cart !== undefined && cart.length !== 0 ? (
                 <ul>

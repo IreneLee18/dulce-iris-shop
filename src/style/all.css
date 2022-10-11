@@ -796,23 +796,45 @@ input[type=checkbox]:checked:after {
   color: #fff;
 }
 
-.user-header .cart:hover .heart-items, .user-header .heart:hover .heart-items {
+.user-header .cart,
+.user-header .heart {
+  position: relative;
+}
+
+.user-header .cart:hover .heart-items,
+.user-header .heart:hover .heart-items {
   visibility: visible;
   opacity: 1;
 }
 
-.user-header .cart:hover .cart-items, .user-header .heart:hover .cart-items {
+.user-header .cart:hover .cart-items,
+.user-header .heart:hover .cart-items {
   visibility: visible;
   opacity: 1;
 }
 
-.user-header .cart-items, .user-header .heart-items {
+.user-header .cart-count,
+.user-header .heart-count {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff5f5f;
+  color: #fff;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.user-header .cart-items,
+.user-header .heart-items {
   width: 300px;
   max-height: 280px;
   overflow: scroll;
   position: absolute;
   top: 65px;
-  right: 0;
+  right: -100%;
   opacity: 0;
   visibility: hidden;
   background: rgba(178, 160, 150, 0.95);
@@ -822,12 +844,14 @@ input[type=checkbox]:checked:after {
   transition: .7s all;
 }
 
-.user-header .cart-items p, .user-header .heart-items p {
+.user-header .cart-items p,
+.user-header .heart-items p {
   padding: 20px;
   text-align: center;
 }
 
-.user-header .cart ul, .user-header .heart ul {
+.user-header .cart ul,
+.user-header .heart ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -835,7 +859,8 @@ input[type=checkbox]:checked:after {
   padding: 10px 0;
 }
 
-.user-header .cart ul li, .user-header .heart ul li {
+.user-header .cart ul li,
+.user-header .heart ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -848,7 +873,8 @@ input[type=checkbox]:checked:after {
   padding: 10px;
 }
 
-.user-header .cart ul li div, .user-header .heart ul li div {
+.user-header .cart ul li div,
+.user-header .heart ul li div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

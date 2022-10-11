@@ -5,7 +5,14 @@ import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
 function ProductDetail() {
   const navigate = useNavigate();
-  const { handleClickAddCart, qty, setQty } = useContext(DataContext);
+  const {
+    handleClickAddCart,
+    qty,
+    setQty,
+    heartID,
+    handleClickAddHeart,
+    handleClickDeleteHeart,
+  } = useContext(DataContext);
   const { ID } = useParams();
   const [productDetail, setProductDetail] = useState([]);
   const [suggestionProduct, setSuggestionProduct] = useState([]);
@@ -143,12 +150,29 @@ function ProductDetail() {
                   </button>
                 </div>
                 <div className="icon-btnGroup">
-                  <div className="like">
-                    <span className="material-symbols-outlined">
-                      heart_plus
-                    </span>
-                    <span>LIKE</span>
-                  </div>
+                  {!heartID.includes(ID) ? (
+                    <div className="like" id={ID} onClick={handleClickAddHeart}>
+                      <span className="material-symbols-outlined" id={ID}>
+                        heart_plus
+                      </span>
+                      <span id={ID}>LIKE</span>
+                    </div>
+                  ) : (
+                    <div
+                      className="like"
+                      id={ID}
+                      onClick={handleClickDeleteHeart}
+                    >
+                      <span
+                        className="material-icons-outlined"
+                        id={ID}
+                        style={{ color: "#ff5f5f" }}
+                      >
+                        favorite
+                      </span>
+                      <span id={ID}>LIKE</span>
+                    </div>
+                  )}
                   <div className="share">
                     <span className="material-symbols-outlined">share</span>
                     <span>SHARE</span>

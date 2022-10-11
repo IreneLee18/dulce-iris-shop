@@ -47,20 +47,25 @@ export const DataProvider = ({ children }) => {
     const dataID = JSON.parse(window.localStorage.getItem("heartID")) || [];
     // let data = heart;
     // let dataID = heartID;
-    const [currentData] = allProducts.current.filter(
-      (item) => item.id === e.target.id
-    );
-    data.push(currentData);
-    dataID.push(currentData.id);
-    window.localStorage.setItem("heart", JSON.stringify(data));
-    window.localStorage.setItem("heartID", JSON.stringify(dataID));
-    setHeart(data);
-    setHeartID(dataID);
-    sweetAlert(
-      "success",
-      `新增我的最愛`,
-      `已新增「${currentData.title}」至我的最愛`
-    );
+    if (!heartID.includes(e.target.id)) {
+      const [currentData] = allProducts.current.filter(
+        (item) => item.id === e.target.id
+      );
+      console.log(e.target.id)
+      data.push(currentData);
+      dataID.push(currentData.id);
+      window.localStorage.setItem("heart", JSON.stringify(data));
+      window.localStorage.setItem("heartID", JSON.stringify(dataID));
+      setHeart(data);
+      setHeartID(dataID);
+      sweetAlert(
+        "success",
+        `新增我的最愛`,
+        `已新增「${currentData.title}」至我的最愛`
+      );
+    }else{
+      sweetAlert('error','我的最愛已經含有此商品了！')
+    }
   };
   const handleClickDeleteHeart = (e) => {
     let data = heart;
