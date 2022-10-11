@@ -10,7 +10,6 @@ function Products() {
   const { ID } = useParams();
   const {
     handleClickAddCart,
-    heart,
     heartID,
     handleClickAddHeart,
     handleClickDeleteHeart,
@@ -21,7 +20,6 @@ function Products() {
   const [searchProduct, setSearchProduct] = useState([]);
   const [perPage, setPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
-  const [haveHeart,setHaveHeart]=useState(heart)
   useLayoutEffect(() => {
     setIsLoading(() => true);
   }, [ID]);
@@ -69,8 +67,7 @@ function Products() {
     if (!isLoading) {
       handleChangePageData(currentPage);
     }
-    console.log(heart,heartID)
-  }, [isLoading, handleChangePageData, currentPage,heart]);
+  }, [isLoading, handleChangePageData, currentPage]);
   return (
     <>
       <div className="user-product">

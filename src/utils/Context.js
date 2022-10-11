@@ -16,12 +16,8 @@ export const DataProvider = ({ children }) => {
       setIsLoading(() => false);
     });
     getProductsData().then((res) => (allProducts.current = res.products));
-    if (window.localStorage.getItem("heartID")) {
-      setHeartID(JSON.parse(window.localStorage.getItem("heartID")));
-    }
-    if (window.localStorage.getItem("heart")) {
-      setHeart(JSON.parse(window.localStorage.getItem("heart")));
-    }
+    setHeartID(JSON.parse(window.localStorage.getItem("heartID")) || []);
+    setHeart(JSON.parse(window.localStorage.getItem("heart")) || []);
     console.log("cart");
   }, []);
   const handleClickAddCart = (e) => {
@@ -46,45 +42,43 @@ export const DataProvider = ({ children }) => {
     });
   };
   const handleClickAddHeart = (e) => {
-    const data = JSON.parse(window.localStorage.getItem("heart"));
-    const dataID = JSON.parse(window.localStorage.getItem("heartID"));
-    const currentData = allProducts.current.filter(
+    // 防止最一開始的getItem回傳的資料是null導致出錯下面程式碼不能執行
+    const data = JSON.parse(window.localStorage.getItem("heart")) || [];
+    const dataID = JSON.parse(window.localStorage.getItem("heartID")) || [];
+    // let data = heart;
+    // let dataID = heartID;
+    const [currentData] = allProducts.current.filter(
       (item) => item.id === e.target.id
     );
-    data.push(currentData[0]);
-    dataID.push(currentData[0].id);
-    window.localStorage.setItem("heartID", JSON.stringify(dataID));
+    data.push(currentData);
+    dataID.push(currentData.id);
     window.localStorage.setItem("heart", JSON.stringify(data));
-    // setHeart(data);
-    // setHeartID(dataID);
-    setHeart(JSON.parse(window.localStorage.getItem("heart")));
-    setHeartID(JSON.parse(window.localStorage.getItem("heartID")));
-    console.log(data, dataID, "heart", heart, heartID);
+    window.localStorage.setItem("heartID", JSON.stringify(dataID));
+    setHeart(data);
+    setHeartID(dataID);
     sweetAlert(
       "success",
       `新增我的最愛`,
-      `已新增「${currentData[0].title}」至我的最愛`
+      `已新增「${currentData.title}」至我的最愛`
     );
   };
   const handleClickDeleteHeart = (e) => {
-    let data = JSON.parse(window.localStorage.getItem("heart"));
-    let dataID = JSON.parse(window.localStorage.getItem("heartID"));
-    const currentData = allProducts.current.filter(
+    let data = heart;
+    let dataID = heartID;
+    const [currentData] = allProducts.current.filter(
       (item) => item.id === e.target.id
     );
-    data = data.filter((item) => item.id !== currentData[0].id);
-    dataID = dataID.filter((item) => item !== currentData[0].id);
-    window.localStorage.setItem("heartID", JSON.stringify(dataID));
+    // filter回傳新值
+    data = data.filter((item) => item.id !== currentData.id);
+    dataID = dataID.filter((item) => item !== currentData.id);
     window.localStorage.setItem("heart", JSON.stringify(data));
-    // setHeart(data);
-    // setHeartID(dataID);
-    setHeart(JSON.parse(window.localStorage.getItem("heart")));
-    setHeartID(JSON.parse(window.localStorage.getItem("heartID")));
-    console.log(data, dataID, "heart", heart, heartID);
+    window.localStorage.setItem("heartID", JSON.stringify(dataID));
+    setHeart(data);
+    setHeartID(dataID);
     sweetAlert(
       "success",
       `刪除我的最愛`,
-      `已從我的最愛刪除「${currentData[0].title}」`
+      `已從我的最愛刪除「${currentData.title}」`
     );
   };
   return (
