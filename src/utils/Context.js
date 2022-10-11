@@ -67,20 +67,25 @@ export const DataProvider = ({ children }) => {
     );
   };
   const handleClickDeleteHeart = (e) => {
-    const data = heart;
-    const dataID = heartID;
+    let data = JSON.parse(window.localStorage.getItem("heart"));
+    let dataID = JSON.parse(window.localStorage.getItem("heartID"));
     const currentData = allProducts.current.filter(
       (item) => item.id === e.target.id
     );
-    data.push(currentData[0]);
-    dataID.push(currentData[0].id);
-    sweetAlert(
-      "success",
-      `新增我的最愛`,
-      `已新增「${currentData[0].title}」至我的最愛`
-    );
+    data = data.filter((item) => item.id !== currentData[0].id);
+    dataID = dataID.filter((item) => item !== currentData[0].id);
     window.localStorage.setItem("heartID", JSON.stringify(dataID));
     window.localStorage.setItem("heart", JSON.stringify(data));
+    // setHeart(data);
+    // setHeartID(dataID);
+    setHeart(JSON.parse(window.localStorage.getItem("heart")));
+    setHeartID(JSON.parse(window.localStorage.getItem("heartID")));
+    console.log(data, dataID, "heart", heart, heartID);
+    sweetAlert(
+      "success",
+      `刪除我的最愛`,
+      `已從我的最愛刪除「${currentData[0].title}」`
+    );
   };
   return (
     <DataContext.Provider
