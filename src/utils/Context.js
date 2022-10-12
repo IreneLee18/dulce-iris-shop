@@ -11,14 +11,12 @@ export const DataProvider = ({ children }) => {
   const allProducts = useRef([]);
   useEffect(() => {
     getAllCart().then((res) => {
-      console.log(res.data);
       setCart(res.data.carts);
       setIsLoading(() => false);
     });
     getProductsData().then((res) => (allProducts.current = res.products));
     setHeartID(JSON.parse(window.localStorage.getItem("heartID")) || []);
     setHeart(JSON.parse(window.localStorage.getItem("heart")) || []);
-    console.log("cart");
   }, []);
   const handleClickAddCart = (e) => {
     const data = { data: { product_id: e.target.id, qty: qty } };
@@ -42,18 +40,12 @@ export const DataProvider = ({ children }) => {
     });
   };
   const handleClickAddHeart = (e) => {
-    // 防止最一開始的getItem回傳的資料是null導致出錯下面程式碼不能執行
-    const data = JSON.parse(window.localStorage.getItem("heart")) || [];
-    const dataID = JSON.parse(window.localStorage.getItem("heartID")) || [];
-    // let data = heart;
-    // let dataID = heartID;
     if (!heartID.includes(e.target.id)) {
       const [currentData] = allProducts.current.filter(
         (item) => item.id === e.target.id
       );
-      console.log(e.target.id)
-      data.push(currentData);
-      dataID.push(currentData.id);
+      const data = [...heart, currentData];
+      const dataID = [...heartID, currentData.id];
       window.localStorage.setItem("heart", JSON.stringify(data));
       window.localStorage.setItem("heartID", JSON.stringify(dataID));
       setHeart(data);
@@ -63,19 +55,17 @@ export const DataProvider = ({ children }) => {
         `新增我的最愛`,
         `已新增「${currentData.title}」至我的最愛`
       );
-    }else{
-      sweetAlert('error','我的最愛已經含有此商品了！')
+    } else {
+      sweetAlert("error", "我的最愛已經含有此商品了！");
     }
   };
   const handleClickDeleteHeart = (e) => {
-    let data = heart;
-    let dataID = heartID;
     const [currentData] = allProducts.current.filter(
       (item) => item.id === e.target.id
     );
     // filter回傳新值
-    data = data.filter((item) => item.id !== currentData.id);
-    dataID = dataID.filter((item) => item !== currentData.id);
+    const data = heart.filter((item) => item.id !== currentData.id);
+    const dataID = heartID.filter((item) => item !== currentData.id);
     window.localStorage.setItem("heart", JSON.stringify(data));
     window.localStorage.setItem("heartID", JSON.stringify(dataID));
     setHeart(data);
