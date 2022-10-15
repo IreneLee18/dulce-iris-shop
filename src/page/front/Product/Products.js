@@ -127,15 +127,15 @@ function Products() {
                         <div className="card-price">
                           {item.price !== item.origin_price ? (
                             <>
-                              <span className="origin_price">
-                                NT${currency(item.origin_price)}
-                              </span>
                               <span className="price">
                                 NT${currency(item.price)}
                               </span>
+                              <span className="origin_price">
+                                NT${currency(item.origin_price)}
+                              </span>
                             </>
                           ) : (
-                            <span>NT${currency(item.price)}</span>
+                            <span>NT${currency(item.origin_price)}</span>
                           )}
                         </div>
                       </div>

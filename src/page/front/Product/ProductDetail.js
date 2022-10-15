@@ -68,13 +68,13 @@ function ProductDetail() {
               <ul className="price-group">
                 {productDetail.price !== productDetail.origin_price ? (
                   <>
-                    <li>NT${currency(productDetail.origin_price)}</li>
+                    <li>NT${currency(productDetail.price)}</li>
                     <li className="price">
-                      NT${currency(productDetail.price)}
+                      NT${currency(productDetail.origin_price)}
                     </li>
                   </>
                 ) : (
-                  <li>NT${currency(productDetail.price)}</li>
+                  <li>NT${currency(productDetail.origin_price)}</li>
                 )}
                 <li>({productDetail.unit})</li>
               </ul>
@@ -102,9 +102,9 @@ function ProductDetail() {
                 <ul className="price-group">
                   {productDetail.price !== productDetail.origin_price ? (
                     <>
-                      <li>NT${currency(productDetail.origin_price)}</li>
+                      <li>NT${currency(productDetail.price)}</li>
                       <li className="price">
-                        NT${currency(productDetail.price)}
+                        NT${currency(productDetail.origin_price)}
                       </li>
                     </>
                   ) : (

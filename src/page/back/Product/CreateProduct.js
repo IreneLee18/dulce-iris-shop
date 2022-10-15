@@ -395,18 +395,18 @@ const CreateProduct = () => {
                   </label>
                 </div>
                 <div className="createProduct-info-price">
-                  <label htmlFor="price">
+                  <label htmlFor="origin_price">
                     <span>原價</span>
                     <input
                       type="number"
-                      id="price"
-                      className={isError.price ? "error" : ""}
+                      id="origin_price"
+                      className={isError.origin_price ? "error" : ""}
                       placeholder="請輸入原價"
-                      value={product.price}
+                      value={product.origin_price}
                       onChange={(e) =>
                         setProduct((state) => ({
                           ...state,
-                          price: Number(e.target.value.trim()),
+                          origin_price: Number(e.target.value.trim()),
                         }))
                       }
                     />
@@ -415,14 +415,14 @@ const CreateProduct = () => {
                     <span>特價</span>
                     <input
                       type="number"
-                      id="origin_price"
-                      className={isError.origin_price ? "error" : ""}
+                      id="price"
+                      className={isError.price ? "error" : ""}
                       placeholder="請輸入特價"
-                      value={product.origin_price}
+                      value={product.price}
                       onChange={(e) =>
                         setProduct((state) => ({
                           ...state,
-                          origin_price: Number(e.target.value.trim()),
+                          price: Number(e.target.value.trim()),
                         }))
                       }
                     />

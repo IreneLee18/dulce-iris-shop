@@ -136,12 +136,12 @@ function Product() {
                         </div>
                         <div>
                           {item.price === item.origin_price ? (
-                            <span>NT${currency(item.price)}</span>
+                            <span>NT${currency(item.origin_price)}</span>
                           ) : (
                             <>
-                              <span>NT${currency(item.origin_price)}</span>
+                              <span>NT${currency(item.price)}</span>
                               <span className="haveDiscountPrice">
-                                NT${currency(item.price)}
+                                NT${currency(item.origin_price)}
                               </span>
                             </>
                           )}
