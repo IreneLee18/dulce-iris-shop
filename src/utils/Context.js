@@ -4,6 +4,8 @@ import { sweetAlert } from "./SweetAlert";
 export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [finalPrice, setFinalPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [qty, setQty] = useState(1);
   const [heart, setHeart] = useState([]);
@@ -12,6 +14,9 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     getAllCart().then((res) => {
       setCart(res.data.carts);
+      setTotalPrice(res.data.total);
+      setFinalPrice(Math.ceil(res.data.final_total));
+      console.log(res);
       setIsLoading(() => false);
     });
     getProductsData().then((res) => (allProducts.current = res.products));
@@ -23,7 +28,11 @@ export const DataProvider = ({ children }) => {
     addCart(data).then((res) => {
       if (res.success) {
         sweetAlert("success", `「${res.data.product.title}」${res.message}`);
-        getAllCart().then((res) => setCart(res.data.carts));
+        getAllCart().then((res) => {
+          setCart(res.data.carts);
+          setTotalPrice(res.data.total);
+          setFinalPrice(Math.ceil(res.data.final_total));
+        });
         setQty(1);
       }
     });
@@ -31,11 +40,16 @@ export const DataProvider = ({ children }) => {
   const handleClickDeleteCart = (e) => {
     deleteCart(e.target.id).then((res) => {
       if (res.success) {
-        const data = cart.filter((item) => item.id !== e.target.id);
+        // const data = cart.filter((item) => item.id !== e.target.id);
         const deleteTitle = cart.filter((item) => item.id === e.target.id)[0]
           .product.title;
         sweetAlert("success", `${res.message}「${deleteTitle}」`);
-        setCart(data);
+        getAllCart().then((res) => {
+          setCart(res.data.carts);
+          setTotalPrice(res.data.total);
+          setFinalPrice(Math.ceil(res.data.final_total));
+        });
+        // setCart(data);
       }
     });
   };
@@ -83,6 +97,10 @@ export const DataProvider = ({ children }) => {
         setIsLoading,
         cart,
         setCart,
+        totalPrice,
+        setTotalPrice,
+        finalPrice,
+        setFinalPrice,
         handleClickAddCart,
         handleClickDeleteCart,
         qty,

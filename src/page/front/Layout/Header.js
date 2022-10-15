@@ -117,7 +117,9 @@ function Header() {
             </div>
           </li>
           <li className="cart">
-            <span className="material-symbols-outlined">shopping_cart</span>
+            <Link to="/cart">
+              <span className="material-symbols-outlined">shopping_cart</span>
+            </Link>
             <div className="cart-count">{cart.length}</div>
             <div className="cart-items">
               {cart !== undefined && cart.length !== 0 ? (

@@ -264,3 +264,13 @@ export const deleteAllCart = ()=> {
   ).then((res) => res.json());
 };
 
+export const enterCoupon = (data) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/coupon`,
+    {
+      method: "POST",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+}

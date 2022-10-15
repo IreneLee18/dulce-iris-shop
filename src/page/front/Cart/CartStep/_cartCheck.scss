@@ -1,0 +1,147 @@
+.cart-check {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+
+  &-item {
+    width: 68%;
+    text-align: center;
+    border: 1px solid $light-brown;
+    // border-radius: 5px;
+    padding: 10px;
+
+    thead {
+      border-bottom: 2px solid $light-brown;
+      font-weight: bold;
+    }
+
+    th {
+      padding-bottom: 10px;
+
+      &:first-child {
+        text-align-last: left;
+        padding-left: 5px;
+      }
+    }
+
+    td {
+      padding-top: 10px;
+
+      &:first-child {
+        width: 30%;
+        text-align: left;
+        padding-left: 5px;
+      }
+
+      &:nth-child(2) {
+        width: 20%;
+      }
+
+      &:nth-child(3) {
+        width: 20%;
+      }
+
+      &:nth-child(4) {
+        width: 20%;
+      }
+
+      &:last-child {
+        width: 10%;
+
+        button {
+          &:hover {
+            color: $danger;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    border: 1px solid $light-brown;
+    border-radius: 5px;
+
+    input {
+      border: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      padding: 0 10px;
+    }
+  }
+
+
+  &-confirm {
+    width: 28%;
+    height: 300px;
+    border: 1px solid $light-brown;
+    // border-radius: 5px;
+    padding: 10px 10px 0;
+
+    label {
+      margin-bottom: 10px;
+
+      input {
+        width: 85%;
+      }
+
+      button {
+        width: 15%;
+        padding: 0;
+        color: #fff;
+        background: rgba(83, 63, 52, .8);
+
+        &:hover {
+          background: $light-brown;
+        }
+      }
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .delivery-fee-describe {
+      font-size: 12px;
+      color: #ccc;
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    .free-delivery-fee {
+      margin-top: 45px;
+      color: $danger;
+      font-size: 14px;
+    }
+
+    .finalPrice {
+      border-top: 2px solid $light-brown;
+      padding-top: 10px;
+
+      span {
+        &:last-child {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .confirmBtn {
+      button {
+        width: 100%;
+        font-size: 24px;
+        background: $light-brown;
+        border-radius: 5px;
+        padding: 10px;
+
+        &:hover {
+          background-color: lighten($light-brown, 10%);
+        }
+      }
+    }
+  }
+}
