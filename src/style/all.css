@@ -2667,6 +2667,149 @@ input[type=checkbox]:checked:after {
   background-color: #bdada4;
 }
 
+.cart-info-title {
+  font-size: 36px;
+  margin: 20px 0 10px;
+}
+
+.cart-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-info-cart-item {
+  width: 38%;
+  border: 1px solid #a79387;
+  padding: 20px 10px;
+  position: relative;
+}
+
+.cart-info-cart-item ul {
+  height: 350px;
+  overflow: scroll;
+}
+
+.cart-info-cart-item li {
+  border-bottom: 1px solid #a79387;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-info-cart-item li span {
+  display: inline-block;
+}
+
+.cart-info-cart-item li span:first-child {
+  width: 50%;
+}
+
+.cart-info-cart-item li span:nth-child(2) {
+  width: 25%;
+  text-align: right;
+}
+
+.cart-info-cart-item li span:last-child {
+  width: 25%;
+  text-align: right;
+}
+
+.cart-info-cart-item-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+  width: 100%;
+}
+
+.cart-info-cart-item-total div:first-child {
+  margin-left: 40%;
+}
+
+.cart-info-userInfo {
+  width: 58%;
+  border: 1px solid #a79387;
+  padding: 10px;
+}
+
+.cart-info-userInfo form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-info-userInfo label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.cart-info-userInfo label:first-child, .cart-info-userInfo label:nth-child(2) {
+  width: 48%;
+}
+
+.cart-info-userInfo span {
+  margin-bottom: 10px;
+}
+
+.cart-info-userInfo .input-error {
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.cart-info-userInfo .stepBtn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cart-info-userInfo .stepBtn a,
+.cart-info-userInfo .stepBtn input[type="submit"] {
+  border-color: #a79387;
+  background: #a79387;
+  color: #fff;
+  width: 20%;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-info-userInfo .stepBtn a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .product-item {
   display: -webkit-box;
   display: -ms-flexbox;

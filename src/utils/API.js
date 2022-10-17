@@ -205,7 +205,7 @@ export const deleteArticle = (id) => {
 };
 
 // userProduct
-export const getProductsData = ()=> {
+export const getProductsData = () => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/products/all`,
     {
@@ -216,7 +216,7 @@ export const getProductsData = ()=> {
 };
 
 // cart
-export const getAllCart = ()=> {
+export const getAllCart = () => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/cart`,
     {
@@ -225,7 +225,7 @@ export const getAllCart = ()=> {
     }
   ).then((res) => res.json());
 };
-export const addCart = (data)=> {
+export const addCart = (data) => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/cart`,
     {
@@ -235,7 +235,7 @@ export const addCart = (data)=> {
     }
   ).then((res) => res.json());
 };
-export const editCart = (data,id)=> {
+export const editCart = (data, id) => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/cart/${id}`,
     {
@@ -245,7 +245,7 @@ export const editCart = (data,id)=> {
     }
   ).then((res) => res.json());
 };
-export const deleteCart = (id)=> {
+export const deleteCart = (id) => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/cart/${id}`,
     {
@@ -254,7 +254,7 @@ export const deleteCart = (id)=> {
     }
   ).then((res) => res.json());
 };
-export const deleteAllCart = ()=> {
+export const deleteAllCart = () => {
   return fetch(
     `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/carts`,
     {
@@ -273,4 +273,15 @@ export const enterCoupon = (data) => {
       body: JSON.stringify(data),
     }
   ).then((res) => res.json());
-}
+};
+
+export const submitOrder = (data) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/order`,
+    {
+      method: "POST",
+      headers: headersAuth,
+      body: JSON.stringify(data),
+    }
+  ).then((res) => res.json());
+};

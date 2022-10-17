@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { DataContext } from "../../../../utils/Context";
 import currency from "../../../../utils/Currency";
 import { editCart, getAllCart, enterCoupon } from "../../../../utils/API";
 import { sweetAlert } from "../../../../utils/SweetAlert";
 function CartCheck() {
+  const navigate = useNavigate()
   const {
     cart,
     setCart,
@@ -162,7 +164,7 @@ function CartCheck() {
               </span>
             </li>
             <li className="confirmBtn">
-              <button>立即結帳</button>
+              <button onClick={()=>navigate('/cart/info')}>立即結帳</button>
             </li>
           </ul>
         </div>
