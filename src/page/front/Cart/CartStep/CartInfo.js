@@ -1,13 +1,20 @@
 import { useContext, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { DataContext } from "../../../../utils/Context";
 import currency from "../../../../utils/Currency";
 import { sweetAlert } from "../../../../utils/SweetAlert";
 import { submitOrder } from "../../../../utils/API";
 function CartInfo() {
-  const { cart, finalPrice } = useContext(DataContext);
-  const navigate = useNavigate()
+  const {
+    cart,
+    setCart,
+    setTotalPrice,
+    finalPrice,
+    setFinalPrice,
+    setCheckCartID,
+  } = useContext(DataContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,7 +28,12 @@ function CartInfo() {
     submitOrder({ data: { ...userData } }).then((res) => {
       if (res.success) {
         sweetAlert("success", res.message);
-        navigate('/cart/finish')
+        navigate("/cart/finish");
+        // 淨空購物車
+        setCart([]);
+        setTotalPrice(0);
+        setFinalPrice(0);
+        setCheckCartID(res.orderId)
       } else {
         sweetAlert("error", res.message);
       }

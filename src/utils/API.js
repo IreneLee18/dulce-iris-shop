@@ -285,3 +285,23 @@ export const submitOrder = (data) => {
     }
   ).then((res) => res.json());
 };
+
+export const getOrderID = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/order/${id}`,
+    {
+      method: "get",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};
+
+export const payOrder = (id) => {
+  return fetch(
+    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/pay/${id}`,
+    {
+      method: "post",
+      headers: headersAuth,
+    }
+  ).then((res) => res.json());
+};

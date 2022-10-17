@@ -6,6 +6,7 @@ export const DataProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [finalPrice, setFinalPrice] = useState(0);
+  const [checkCartID, setCheckCartID] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [qty, setQty] = useState(1);
   const [heart, setHeart] = useState([]);
@@ -103,6 +104,8 @@ export const DataProvider = ({ children }) => {
         setFinalPrice,
         handleClickAddCart,
         handleClickDeleteCart,
+        checkCartID,
+        setCheckCartID,
         qty,
         setQty,
         heart,

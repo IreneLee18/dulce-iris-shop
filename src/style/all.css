@@ -2447,6 +2447,7 @@ input[type=checkbox]:checked:after {
 
 .cartPage .nav {
   padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .cartPage .nav ul {
@@ -2808,6 +2809,110 @@ input[type=checkbox]:checked:after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.cart-finish,
+.cart-finish-product-list,
+.cart-finish-payBtn {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.cart-finish {
+  border: 1px solid #a79387;
+}
+
+.cart-finish li {
+  padding: 20px 10px;
+  border-bottom: 1px solid #a79387;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart-finish li:last-child {
+  border-bottom: none;
+}
+
+.cart-finish li div:first-child {
+  width: 30%;
+}
+
+.cart-finish li div:nth-child(2) {
+  width: 70%;
+}
+
+.cart-finish .date span {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.cart-finish .date:last-child span:last-child {
+  display: none;
+}
+
+.cart-finish .productList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-finish-product-list {
+  margin: 20px auto 0;
+  padding: 0 10px;
+  -webkit-box-shadow: 5px 5px 10px #a79387;
+          box-shadow: 5px 5px 10px #a79387;
+}
+
+.cart-finish-product-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+}
+
+.cart-finish-product-list li div {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart-finish-product-list li span {
+  width: 50%;
+}
+
+.cart-finish-product-list li span:last-child {
+  text-align: right;
+}
+
+.cart-finish-payBtn {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.cart-finish-payBtn a, .cart-finish-payBtn button {
+  background-color: #a79387;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.cart-finish-payBtn a:hover, .cart-finish-payBtn button:hover {
+  opacity: 0.7;
+}
+
+.cart-finish-payBtn a {
+  display: inline-block;
+  padding: 15px 20px;
 }
 
 .product-item {
