@@ -168,6 +168,10 @@
       box-shadow: 0 0 20px $light-brown;
       transition: .7s all;
 
+      @media (max-width:414px) {
+        right: -52%;
+      }
+
       p {
         padding: 20px;
         text-align: center;
