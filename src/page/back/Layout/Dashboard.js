@@ -18,11 +18,6 @@ function Dashboard() {
       englishTitle: "COUPONS",
       link: "/back/dashboard/coupons",
     },
-    {
-      title: "文章",
-      englishTitle: "ARTICLES",
-      link: "/back/dashboard/articles",
-    },
   ];
   return (
     <>

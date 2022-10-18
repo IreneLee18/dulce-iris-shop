@@ -161,49 +161,6 @@ export const deleteCoupon = (id) => {
   ).then((res) => res.json());
 };
 
-//article
-export const getArticle = (page) => {
-  return fetch(
-    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/articles?page=${page}`,
-    {
-      method: "GET",
-      headers: headersAuth,
-    }
-  ).then((res) => res.json());
-};
-
-export const addArticle = (data) => {
-  return fetch(
-    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article`,
-    {
-      method: "POST",
-      headers: headersAuth,
-      body: JSON.stringify(data),
-    }
-  ).then((res) => res.json());
-};
-
-export const editArticle = (data, id) => {
-  return fetch(
-    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article/${id}`,
-    {
-      method: "PUT",
-      headers: headersAuth,
-      body: JSON.stringify(data),
-    }
-  ).then((res) => res.json());
-};
-
-export const deleteArticle = (id) => {
-  return fetch(
-    `${process.env.REACT_APP_API}/api/${process.env.REACT_APP_PATH}/admin/article/${id}`,
-    {
-      method: "DELETE",
-      headers: headersAuth,
-    }
-  ).then((res) => res.json());
-};
-
 // userProduct
 export const getProductsData = () => {
   return fetch(
