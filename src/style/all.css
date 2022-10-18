@@ -443,9 +443,18 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 
+.loginPage {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1514064019862-23e2a332a6a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1614&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .go-home {
   font-size: 80px;
   margin-top: 20px;
+  color: #fff;
 }
 
 @media (max-width: 820px) {
@@ -462,6 +471,28 @@ input[type=number]::-webkit-inner-spin-button {
 
 .go-home:hover {
   color: #ff5f5f;
+  position: relative;
+}
+
+.go-home:hover::after {
+  content: 'ⒼⓄ ⒽⓄⓂⒺ ⓅⒶⒼⒺ';
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 4px #ff5f5f;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0 10px 10px;
+}
+
+@media (max-width: 414px) {
+  .go-home:hover::after {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
 }
 
 .login {
@@ -475,6 +506,7 @@ input[type=number]::-webkit-inner-spin-button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  background: rgba(204, 204, 204, 0.6);
 }
 
 @media (max-width: 820px) {
@@ -503,17 +535,33 @@ input[type=number]::-webkit-inner-spin-button {
   width: 100%;
   font-size: 24px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 @media (max-width: 414px) {
   .login label {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
-.login label span:nth-child(1) {
+.login label .title {
   margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #fff;
+}
+
+.login label .input-error {
+  position: absolute;
+  bottom: -15px;
+  font-size: 14px;
+  font-style: oblique;
+}
+
+@media (max-width: 414px) {
+  .login label .input-error {
+    font-size: 12px;
+  }
 }
 
 .login input[type="text"],
@@ -533,20 +581,34 @@ input[type=number]::-webkit-inner-spin-button {
 
 .login input[type="submit"] {
   color: #533f34;
-  background: #a79387;
+  background: #533f34;
   border: none;
+  color: #fff;
   padding: 10px 20px;
   margin-bottom: 10px;
   cursor: pointer;
 }
 
-.login .remember {
-  position: relative;
+.login input[type="submit"]:hover {
+  opacity: 0.8;
 }
 
-.login #remember + span {
+.login .remember {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.login .remember span {
   font-size: 16px;
-  margin-left: 10px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #fff;
+  display: inline-block;
+  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -559,7 +621,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .login p span:hover {
-  color: #ff5f5f;
+  color: #fff;
 }
 
 .input-error {

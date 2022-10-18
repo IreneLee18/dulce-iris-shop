@@ -42,7 +42,7 @@ function Dashboard() {
       <footer className="dashboard-footer">
         <p>COPYRIGHT © 2022 IreneLee. All rights reserved.</p>
         <div>
-          <span className="material-symbols-outlined logout-icon">logout</span>
+          <Link to="/" className="material-symbols-outlined logout-icon">logout</Link>
         </div>
       </footer>
     </>
