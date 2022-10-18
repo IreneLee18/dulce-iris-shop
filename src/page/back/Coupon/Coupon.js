@@ -1,5 +1,6 @@
 import { getCoupon, deleteCoupon } from "../../../utils/API";
 // import { dashboardCouponSearch } from "../../../utils/Data";
+import PaginationDefault from "../../../components/PaginationDefault";
 import { useState, useLayoutEffect, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { sweetAlert } from "../../../utils/SweetAlert";
@@ -12,27 +13,24 @@ function Coupon() {
   const allCoupon = useRef([]);
   // const [searchCoupon, setSearchCoupon] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [allPagination, setAllPagination] = useState([]);
-  const pageNum = [...Array(allPagination.total_pages).keys()].map(
-    (item) => item + 1
-  );
+  const [pagination, setPagination] = useState([]);
   useLayoutEffect(() => {
     getCoupon(currentPage).then((res) => {
       setCoupons(res.coupons);
-      setAllPagination(res.pagination);
+      setPagination(res.pagination);
       setIsLoading(() => false);
       console.log(res);
     });
   }, [currentPage]);
   useEffect(() => {
     const data = [];
-    for (let i = 1; i <= allPagination.total_pages; i++) {
+    for (let i = 1; i <= pagination.total_pages; i++) {
       getCoupon(i).then((res) => {
         data.push(...res.coupons);
         allCoupon.current = data;
       });
     }
-  }, [allPagination.total_pages]);
+  }, [pagination.total_pages]);
   const handleClick = (e) => {
     const { id } = e.target;
     if (id !== "add") {
@@ -51,7 +49,7 @@ function Coupon() {
         sweetAlert("success", "刪除成功");
         getCoupon(currentPage).then((res) => {
           setCoupons(res.coupons);
-          setAllPagination(res.pagination);
+          setPagination(res.pagination);
         });
       }
     });
@@ -125,55 +123,12 @@ function Coupon() {
               </button>
             </div>
           </div>
-          {allPagination.total_pages > 1 ? (
+          {pagination.total_pages > 1 ? (
             <section className="dashboard-coupon-pagination">
-              <ul className="pagination">
-                <li>
-                  <button
-                    id="pre"
-                    className={`material-icons-outlined ${
-                      allPagination.has_pre ? "" : "disabled"
-                    }`}
-                    onClick={() =>
-                      setCurrentPage((state) =>
-                        state === 1 ? state : state - 1
-                      )
-                    }
-                  >
-                    chevron_left
-                  </button>
-                </li>
-                {pageNum.map((pageNum) => (
-                  <li key={pageNum} id={pageNum}>
-                    <button
-                      className={
-                        pageNum === allPagination.current_page ? "active" : ""
-                      }
-                      value={pageNum}
-                      onClick={(e) => setCurrentPage(Number(e.target.value))}
-                    >
-                      {pageNum}
-                    </button>
-                  </li>
-                ))}
-                <li className={allPagination.has_next ? "" : "disabled"}>
-                  <button
-                    id="next"
-                    className={`material-icons-outlined ${
-                      allPagination.has_next ? "" : "disabled"
-                    }`}
-                    onClick={() =>
-                      setCurrentPage((state) =>
-                        state === allPagination.total_pages
-                          ? allPagination.total_pages
-                          : state + 1
-                      )
-                    }
-                  >
-                    chevron_right
-                  </button>
-                </li>
-              </ul>
+              <PaginationDefault
+                pagination={pagination}
+                setCurrentPage={setCurrentPage}
+              />
             </section>
           ) : null}
         </>

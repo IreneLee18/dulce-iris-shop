@@ -16,7 +16,7 @@ import Login from "./page/Login/Login";
 import Dashboard from "./page/back/Layout/Dashboard";
 import Product from "./page/back/Product/Product";
 import CreateProduct from "./page/back/Product/CreateProduct";
-import Order from "./page/back/Order";
+import Order from "./page/back/Order/Order";
 import Coupon from "./page/back/Coupon/Coupon";
 import CreateCoupon from "./page/back/Coupon/CreateCoupon";
 import Article from "./page/back/Article";

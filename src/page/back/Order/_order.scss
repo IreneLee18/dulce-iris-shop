@@ -1,0 +1,180 @@
+.dashboard-order {
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid darken($light-brown, 10%);
+  }
+
+  thead {
+    width: 100%;
+    background: $light-brown;
+  }
+
+  th {
+    text-align: center;
+    padding: 10px 0;
+    border-right: 1px solid darken($light-brown, 10%);
+
+    &:first-child {
+      width: 35%;
+    }
+
+    &:nth-child(2) {
+      width: 25%;
+
+      @media (max-width:414px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 10%;
+
+      @media (max-width:820px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(4) {
+      width: 10%;
+
+      @media (max-width:414px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      width: 10%;
+
+      @media (max-width:820px) {
+        width: 5%;
+      }
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $light-brown;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    text-align: center;
+    padding: 8px 0 10px;
+    border-right: 1px solid darken($light-brown, 10%);
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      @media (max-width:414px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (max-width:820px) {
+        display: none;
+      }
+    }
+
+
+    &:last-child {
+      border-right: none;
+      padding-bottom: 8px;
+    }
+
+    button {
+      font-size: 18px;
+
+      &:hover {
+        animation: flip .6s;
+        color: $danger;
+      }
+    }
+  }
+
+  .unPay {
+    @media (max-width:820px) {
+      color: $danger;
+    }
+  }
+
+  .dashboard-reminder {
+    @media (max-width:820px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    p {
+      display: none;
+      margin-top: 10px;
+
+      @media (max-width:820px) {
+        display: block;
+      }
+    }
+
+  }
+
+  .clearAllOrder {
+    text-align: right;
+
+    button {
+      font-size: 18px;
+      background: $light-brown;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+
+      @media (max-width:820px) {
+        font: 16px;
+        padding: 5px 10px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .noOrder {
+    @include absolute-center;
+    width: 100%;
+
+    p {
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+}
+
+.dashboard-order-pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+
+  @media (max-width:414px) {
+    bottom: 60px;
+  }
+
+  .pagination {
+    li {
+      border-radius: 0%;
+
+      @media (max-width:414px) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+}

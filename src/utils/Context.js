@@ -17,7 +17,7 @@ export const DataProvider = ({ children }) => {
       setCart(res.data.carts);
       setTotalPrice(res.data.total);
       setFinalPrice(Math.ceil(res.data.final_total));
-      console.log(res);
+      // console.log(res);
       setIsLoading(() => false);
     });
     getProductsData().then((res) => (allProducts.current = res.products));
