@@ -17,6 +17,7 @@
       border: 1px solid $light-brown;
       width: 100%;
     }
+
     @media (max-width:414px) {
       margin-bottom: 120px;
     }
@@ -99,13 +100,20 @@
   }
 
   &-item-sm {
+    display: none;
+
+    @media (max-width:414px) {
+      display: block;
+    }
+
     li {
       display: flex;
       align-items: center;
       padding-bottom: 10px;
       margin-bottom: 10px;
       border-bottom: 1px solid $light-brown;
-      &:last-child{
+
+      &:last-child {
         border-bottom: none;
         margin-bottom: 0;
       }
@@ -121,24 +129,29 @@
         object-fit: cover;
       }
     }
-    &-detail{
+
+    &-detail {
       width: 70%;
       text-align: left;
       padding-left: 5px;
-      div{
+
+      div {
         padding-bottom: 5px;
-        white-space:nowrap;
+        white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
       }
-      label{
+
+      label {
         width: 50%;
-        input{
+
+        input {
           padding: 5px 0;
         }
       }
     }
-    &-delete{
+
+    &-delete {
       width: 2%;
     }
 
@@ -183,6 +196,7 @@
 
       input {
         width: 85%;
+        text-align: left;
       }
 
       button {
@@ -273,6 +287,10 @@
 
       label {
         width: 70%;
+
+        input {
+          text-align: left;
+        }
 
         button {
           width: 30%;

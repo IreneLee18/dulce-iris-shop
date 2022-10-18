@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from "../../../../utils/Context";
 import { getOrderID, payOrder } from "../../../../utils/API";
 import currency from "../../../../utils/Currency";
 import { sweetAlert } from "../../../../utils/SweetAlert";
 function CartFinish() {
   const { checkCartID } = useContext(DataContext);
+  const navigate = useNavigate();
   const [checkCart, setCheckCart] = useState(null);
   const [createDate, setCreateDate] = useState([]);
   const cartProduct = useRef([]);
@@ -16,7 +17,8 @@ function CartFinish() {
       if (res.success) {
         sweetAlert("success", res.message);
         setIsPay(() => true);
-        setShowItem(()=>false)
+        setShowItem(() => false);
+        navigate("/cart/finish");
       } else {
         sweetAlert("error", res.message);
       }

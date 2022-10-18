@@ -28,12 +28,12 @@ function CartInfo() {
     submitOrder({ data: { ...userData } }).then((res) => {
       if (res.success) {
         sweetAlert("success", res.message);
-        navigate("/cart/finish");
+        navigate(`/cart/${res.orderId}`);
         // 淨空購物車
         setCart([]);
         setTotalPrice(0);
         setFinalPrice(0);
-        setCheckCartID(res.orderId)
+        setCheckCartID(res.orderId);
       } else {
         sweetAlert("error", res.message);
       }
@@ -119,7 +119,10 @@ function CartInfo() {
             <div>共{cart.length}項</div>
             <div>
               <span>總計：</span>
-              <span>NT$ {currency(finalPrice)}</span>
+              <span>
+                NT${" "}
+                {currency(finalPrice > 5000 ? finalPrice : finalPrice + 500)}
+              </span>
             </div>
           </div>
         </div>

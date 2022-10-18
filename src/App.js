@@ -34,6 +34,7 @@ function App() {
           <Route path="cart" element={<Cart />}>
             <Route index element={<CartCheck />} />
             <Route path="info" element={<CartInfo />} />
+            <Route path=":ID" element={<CartFinish />} />
             <Route path="finish" element={<CartFinish />} />
           </Route>
         </Route>

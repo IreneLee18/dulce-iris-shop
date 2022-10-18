@@ -2464,8 +2464,11 @@ input[type=checkbox]:checked:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .cartPage .nav-step {
@@ -2474,8 +2477,13 @@ input[type=checkbox]:checked:after {
   text-align: center;
   position: relative;
   overflow: hidden;
-  -webkit-box-shadow: 0 0 10px #a79387;
-          box-shadow: 0 0 10px #a79387;
+}
+
+@media (max-width: 414px) {
+  .cartPage .nav-step {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .cartPage .nav-step div {
@@ -2491,13 +2499,13 @@ input[type=checkbox]:checked:after {
       -ms-flex-align: center;
           align-items: center;
   font-weight: bold;
-  text-shadow: 0 0 10px #a79387;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: #f0f0f0;
+  background: #fff;
+  color: #a79387;
 }
 
 .cartPage .nav-step::before {
@@ -2520,10 +2528,37 @@ input[type=checkbox]:checked:after {
   background: linear-gradient(#533f34, #a79387);
 }
 
+.cartPage .nav-currentStep div {
+  color: #533f34;
+}
+
+.cartPage .nav-finishStep {
+  opacity: 0.8;
+}
+
+.cartPage .nav-finishStep::before {
+  background: #533f34;
+}
+
+.cartPage .nav-finishStep div {
+  color: #533f34;
+}
+
 .cartPage .nav-line {
   width: 20%;
-  height: 2px;
-  background: #000;
+  height: 10px;
+  border-bottom: 5px dotted #a79387;
+}
+
+@media (max-width: 414px) {
+  .cartPage .nav-line {
+    width: 10%;
+  }
+}
+
+.cartPage .nav-finishLine {
+  opacity: 0.8;
+  border-color: #533f34;
 }
 
 .cart-check {
@@ -2643,6 +2678,16 @@ input[type=checkbox]:checked:after {
   color: #ff5f5f;
 }
 
+.cart-check-item-sm {
+  display: none;
+}
+
+@media (max-width: 414px) {
+  .cart-check-item-sm {
+    display: block;
+  }
+}
+
 .cart-check-item-sm li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2742,6 +2787,7 @@ input[type=checkbox]:checked:after {
 
 .cart-check-confirm label input {
   width: 85%;
+  text-align: left;
 }
 
 .cart-check-confirm label button {
@@ -2845,6 +2891,10 @@ input[type=checkbox]:checked:after {
 
 .cart-check-confirm-sm .coupon-input label {
   width: 70%;
+}
+
+.cart-check-confirm-sm .coupon-input label input {
+  text-align: left;
 }
 
 .cart-check-confirm-sm .coupon-input label button {

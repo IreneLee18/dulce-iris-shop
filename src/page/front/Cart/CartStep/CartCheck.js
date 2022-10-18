@@ -46,6 +46,7 @@ function CartCheck() {
     enterCoupon(data).then((res) => {
       if (res.success) {
         sweetAlert("success", res.message);
+        setFinalPrice(Math.ceil(res.data.final_total));
         console.log(res);
       } else {
         sweetAlert("error", res.message);
@@ -179,6 +180,7 @@ function CartCheck() {
               id="coupon"
               type="text"
               value={coupon.code}
+              placeholder="請輸入優惠卷代碼"
               onChange={(e) =>
                 setCoupon((state) => ({ ...state, code: e.target.value }))
               }
@@ -235,6 +237,7 @@ function CartCheck() {
                   id="coupon"
                   type="text"
                   value={coupon.code}
+                  placeholder="請輸入優惠卷代碼"
                   onChange={(e) =>
                     setCoupon((state) => ({ ...state, code: e.target.value }))
                   }
