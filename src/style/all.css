@@ -1089,6 +1089,19 @@ input[type=checkbox]:checked:after {
   display: flex;
 }
 
+.user-product-navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+}
+
 .user-product .nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1100,6 +1113,26 @@ input[type=checkbox]:checked:after {
 .user-product .nav span {
   display: inline-block;
   margin: 0 5px;
+}
+
+.user-product-search label {
+  border: 1px solid #533f34;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-product-search input {
+  border: none;
+  background: transparent;
+}
+
+.user-product-search span:hover {
+  color: #725748;
 }
 
 .user-product-group {
@@ -1160,7 +1193,7 @@ input[type=checkbox]:checked:after {
 .user-product .card {
   width: 23%;
   height: 360px;
-  margin: 0 10px 20px;
+  margin: 0 13px 20px;
   overflow: hidden;
   -webkit-box-shadow: 0 0 20px #a79387;
           box-shadow: 0 0 20px #a79387;

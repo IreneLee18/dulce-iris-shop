@@ -16,7 +16,6 @@ function Pagination({
     Math.ceil(allData.length / perPage)
   );
   useEffect(() => {
-    console.log(allData.length)
     if (searchData.length !== 0 && searchData !== undefined) {
       setTotalPage(Math.ceil(searchData.length / perPage));
     } else {

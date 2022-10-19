@@ -18,7 +18,7 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [pageProduct, setPageProduct] = useState([]);
   const [searchProduct, setSearchProduct] = useState([]);
-  const [perPage, setPerPage] = useState(8);
+  const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   useLayoutEffect(() => {
     setIsLoading(() => true);
@@ -43,25 +43,42 @@ function Products() {
       setIsLoading(() => false);
     });
   }, [ID, navigate]);
+  const handelClickSearch = () => {
+    if (searchValue !== "") {
+      const filterData = products.filter((item) =>
+        item.title.includes(searchValue)
+      );
+      if (filterData.length !== 0) {
+        setSearchProduct(filterData);
+      } else {
+        sweetAlert(`error`, `查無資料`, `沒有含有${searchValue}的產品唷～`);
+        setSearchValue("");
+        setSearchProduct([]);
+      }
+    } else {
+      setSearchProduct([]);
+    }
+  };
+  const handelKeyDownSearch = (e) => {
+    if (e.code === "Enter") handelClickSearch();
+  };
   const handleChangePageData = useCallback(
     (current) => {
-      const max = current * perPage;
-      const min = max - perPage + 1;
+      const max = current * 8;
+      const min = max - 8 + 1;
       if (searchProduct.length !== 0) {
         setPageProduct(
           searchProduct.filter(
             (data, index) => index + 1 >= min && index + 1 <= max
           )
         );
-        console.log("search");
       } else {
         setPageProduct(
           products.filter((data, index) => index + 1 >= min && index + 1 <= max)
         );
-        console.log("all");
       }
     },
-    [perPage, products, searchProduct]
+    [products, searchProduct]
   );
   useLayoutEffect(() => {
     if (!isLoading) {
@@ -72,8 +89,8 @@ function Products() {
     <>
       <div className="user-product">
         <div className="background-image"></div>
-        <section>
-          <ul className="nav container">
+        <section className="user-product-navBar container">
+          <ul className="nav">
             <li>
               <Link to="/">首頁</Link>
             </li>
@@ -94,6 +111,23 @@ function Products() {
               </>
             )}
           </ul>
+          <div className="user-product-search">
+            <label htmlFor="search">
+              <input
+                type="text"
+                placeholder="搜尋產品"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value.trim())}
+                onKeyDown={handelKeyDownSearch}
+              />
+              <span
+                className="material-symbols-outlined"
+                onClick={handelClickSearch}
+              >
+                search
+              </span>
+            </label>
+          </div>
         </section>
         <section>
           <div className="user-product-group container">
@@ -170,7 +204,7 @@ function Products() {
                 </ul>
                 <section className="user-product-pagination">
                   <Pagination
-                    perPage={perPage}
+                    perPage={8}
                     allData={products}
                     searchData={searchProduct}
                     currentPage={currentPage}
