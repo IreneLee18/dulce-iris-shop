@@ -45,9 +45,10 @@ function Promotion() {
   }, [getDeg, startPress]);
   return (
     <>
-      <section className="promotion container">
-        <h1>PROMOTION</h1>
-        <section className="promotion-wheel">
+      <section className="promotion">
+      <div className="background-image"></div>
+        <h1 className="container">PROMOTION</h1>
+        <section className="promotion-wheel container">
           <h2>轉盤抽抽樂</h2>
           <div className="promotion-wheel-item">
             <p>
@@ -87,7 +88,7 @@ function Promotion() {
             </div>
           </div>
         </section>
-        <section className="promotion-stored">
+        <section className="promotion-stored container">
           <h2>儲值方案</h2>
           <ul className="promotion-stored-group">
             <li className="promotion-stored-item">
@@ -122,7 +123,7 @@ function Promotion() {
             </li>
           </ul>
         </section>
-        <section>
+        <section className="container">
           <h2>注意事項</h2>
           <ul className="promotion-notice">
             <li>

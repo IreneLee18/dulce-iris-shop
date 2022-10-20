@@ -1,4 +1,7 @@
 .promotion {
+  position: relative;
+  padding-bottom: 20px;
+
   h1 {
     font-size: 36px;
     padding-top: 10px;
@@ -24,6 +27,7 @@
       justify-content: space-between;
       box-shadow: 0 0 10px $dark-brown;
       padding: 0 20px 40px 10px;
+      background: rgba(255, 255, 255, .7);
 
       @media (max-width:414px) {
         flex-wrap: wrap;
@@ -161,6 +165,7 @@
       justify-content: center;
       flex-wrap: wrap;
       box-shadow: 0 0 10px $dark-brown;
+    background: rgba(255,255,255,.7);
     }
 
     &-item {
@@ -258,8 +263,8 @@
 
   &-notice {
     box-shadow: 0 0 10px $dark-brown;
+    background: rgba(255,255,255,.7);
     padding: 10px;
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
 

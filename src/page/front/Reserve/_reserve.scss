@@ -1,11 +1,14 @@
 .reserve {
-  margin-bottom: 36px;
+  padding-bottom: 36px;
+  position: relative;
 
   h2 {
     font-size: 36px;
     display: inline-block;
     @include title-border;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 3px #fff;
+    font-weight: bold;
 
     @media (max-width:414px) {
       font-size: 30px;
@@ -15,7 +18,7 @@
   h3 {
     font-size: 28px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 3px $light-brown;
+    text-shadow: 2px 2px 3px #fff;
 
     @media (max-width:414px) {
       font-size: 24px;
@@ -25,7 +28,7 @@
   p {
     font-size: 20px;
     line-height: 1.5;
-    text-shadow: 2px 2px 3px $light-brown;
+    text-shadow: 2px 2px 3px #fff;
 
     @media (max-width:414px) {
       font-size: 16px;
@@ -36,16 +39,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media (max-width:820px) {
       flex-direction: column;
       align-items: start;
     }
-    
   }
 
   .list {
-    border: 1px solid $dark-brown;
     margin-top: 10px;
+    padding: 5px;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 5px;
 
     ul {
       margin-top: 10px;

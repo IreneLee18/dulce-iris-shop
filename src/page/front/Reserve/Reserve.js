@@ -4,8 +4,9 @@ function Reserve() {
   return (
     <>
       <section>
-        <div className="reserve container">
-          <div className="note">
+        <div className="reserve">
+        <div className="background-image"></div>
+          <div className="note container">
             <div className="reserve-calendar">
               <Calendar />
             </div>
@@ -18,8 +19,7 @@ function Reserve() {
               </div>
             </div>
           </div>
-
-          <div className="list">
+          <div className="list container">
             <ul>
               <li>
                 <span className="list-icon">✦</span>可預約時段：上午11:00 ～
