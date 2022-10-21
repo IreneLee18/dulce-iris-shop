@@ -29,12 +29,6 @@ function Header() {
           DULCE IRIS
         </Link>
         <ul className="nav-menu">
-          <li>
-            <Link to="/about">
-              <span>關於我們</span>
-              <span>ABOUT US</span>
-            </Link>
-          </li>
           <li className="nav-menu-allProduct">
             <Link to="/products/所有商品">
               <span>所有商品</span>

@@ -5,7 +5,6 @@ import Home from "./page/front/Home/Home";
 import Products from "./page/front/Product/Products";
 import ProductDetail from "./page/front/Product/ProductDetail";
 import Promotion from "./page/front/Promotion/Promotion";
-import About from "./page/front/About/About";
 import Reserve from "./page/front/Reserve/Reserve";
 import Cart from "./page/front/Cart/Cart";
 import CartCheck from "./page/front/Cart/CartStep/CartCheck";
@@ -28,7 +27,6 @@ function App() {
           <Route path="products/:ID" element={<Products />} />
           <Route path="product/detail/:ID" element={<ProductDetail />} />
           <Route path="promotion" element={<Promotion />} />
-          <Route path="about" element={<About />} />
           <Route path="reserve" element={<Reserve />} />
           <Route path="cart" element={<Cart />}>
             <Route index element={<CartCheck />} />

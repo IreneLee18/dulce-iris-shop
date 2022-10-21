@@ -3,32 +3,29 @@ import { useNavigate } from "react-router-dom";
 import { productLink, sliderData } from "../../../../../utils/Data";
 
 const perSlider = 1;
-const totalPage = [
-  ...Array(Math.ceil(sliderData.length / perSlider)).keys(),
-].map((item) => item + 1);
 
 function Slider() {
   const navigate = useNavigate();
-  const [sliderImage, setSliderImage] = useState({});
-  const [sliderLink, setSliderLink] = useState({});
+  const [sliderItem, setSliderItem] = useState({});
+  // const [sliderLink, setSliderLink] = useState({});
   const [currentStep, setCurrentStep] = useState(1);
   const stepId = useRef(null);
   const handleOnChange = useCallback((current) => {
     const max = current * perSlider;
     const min = max - perSlider + 1;
-    setSliderImage(
+    setSliderItem(
       ...sliderData.filter(
         (data, index) => index + 1 >= min && index + 1 <= max
       )
     );
-    setSliderLink(
-      ...productLink.filter(
-        (data, index) => index + 1 >= min && index + 1 <= max
-      )
-    );
+    // setSliderLink(
+    //   ...productLink.filter(
+    //     (data, index) => index + 1 >= min && index + 1 <= max
+    //   )
+    // );
   }, []);
   const handleClickGoPage = () => {
-    navigate(sliderLink.link);
+    navigate(sliderItem.link);
   };
   useEffect(() => {
     handleOnChange(currentStep);
@@ -51,15 +48,11 @@ function Slider() {
   return (
     <>
       <div className="slider">
-        <img src={sliderImage.src} alt={sliderImage.id} />
-        <div className="slider-link" onClick={handleClickGoPage}>
-          <p>{sliderLink.title}</p>
+        <img src={sliderItem.src} alt={sliderItem.id} />
+        <div className="slider-link">
+          <p>{sliderItem.context}</p>
+          <button onClick={handleClickGoPage}>{sliderItem.id}</button>
         </div>
-        <ul>
-          {totalPage.map((item) => (
-            <li key={item}></li>
-          ))}
-        </ul>
       </div>
     </>
   );

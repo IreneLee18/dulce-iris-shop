@@ -1,10 +1,5 @@
 export const navAllLink = [
   {
-    title: "關於我們",
-    englishTitle: "ABOUT US",
-    link: "/about",
-  },
-  {
     title: "所有商品",
     englishTitle: "SHOP ALL",
     link: "/products/所有商品",
@@ -42,7 +37,7 @@ export const navAllLink = [
 ];
 export const productLink = [
   {
-    title: "全部商品",
+    title: "所有商品",
     id: "所有商品",
     link: "/products/所有商品",
   },
@@ -64,20 +59,32 @@ export const productLink = [
 ];
 export const sliderData = [
   {
-    src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    // src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    src:'https://images.unsplash.com/photo-1465990138262-b7c355d1ef90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     id: "所有商品",
+    context:'不知道從哪看起嗎？那就先來這裡吧～',
+    link: "/products/所有商品",
   },
   {
-    src: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    // src: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    src:'https://images.unsplash.com/photo-1555089548-88459e991a93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     id: "養肌課程",
+    context:'想要像韓國水美美一樣有水煮蛋肌嗎？',
+    link: "/products/養肌課程",
   },
   {
-    src: "https://images.unsplash.com/photo-1492618269284-653dce58fd6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80",
+    // src: "https://images.unsplash.com/photo-1492618269284-653dce58fd6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80",
+    src:'https://images.unsplash.com/photo-1548031101-42105b053869?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     id: "睫毛課程",
+    context:'讓你體驗看看電眼的滋味是什麼！',
+    link: "/products/睫毛課程",
   },
   {
-    src: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    // src: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    src:'https://images.unsplash.com/photo-1601211804107-26b0db6e4336?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     id: "居家保養",
+    context:'懶得去美容室嗎？沒關係我有好寶推薦你！',
+    link: "/products/居家保養",
   },
 ];
 

@@ -63,3 +63,9 @@ $success: #99dd00;
     right: 30px;
   }
 }
+
+@mixin background-image($src,$size,$repeat) {
+  background-image: url($src);
+  background-size: $size;
+  background-repeat: $repeat;
+}
