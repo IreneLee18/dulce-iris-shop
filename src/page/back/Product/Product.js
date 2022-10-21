@@ -8,8 +8,6 @@ import currency from "../../../utils/Currency";
 import { dashboardProductSearch } from "../../../utils/Data";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Skeleton from "@mui/material/Skeleton";
-
 function Product() {
   const navigate = useNavigate();
   const productViewModalRef = useRef();

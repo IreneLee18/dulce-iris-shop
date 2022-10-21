@@ -4,6 +4,7 @@ import { DataContext } from "../../../../utils/Context";
 import { getOrderID, payOrder } from "../../../../utils/API";
 import currency from "../../../../utils/Currency";
 import { sweetAlert } from "../../../../utils/SweetAlert";
+import Loading from "../../../../components/Loading";
 function CartFinish() {
   const { checkCartID } = useContext(DataContext);
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function CartFinish() {
   return (
     <>
       {checkCart === null ? (
-        <h1>hi</h1>
+        <Loading />
       ) : (
         <>
           <div className="cart-finish">
@@ -85,7 +86,20 @@ function CartFinish() {
               </li>
               <li>
                 <div>總金額</div>
-                <div>NT$ {currency(checkCart.total)}</div>
+                <div>
+                  NT${" "}
+                  {currency(
+                    checkCart.total > 5000
+                      ? checkCart.total
+                      : checkCart.total + 500
+                  )}
+                  {checkCart.total > 5000 ? null : (
+                    <span style={{ fontSize: "14px", color: "#ccc" }}>
+                      {" "}
+                      (含運費)
+                    </span>
+                  )}
+                </div>
               </li>
               <li>
                 <div>訂購商品</div>
