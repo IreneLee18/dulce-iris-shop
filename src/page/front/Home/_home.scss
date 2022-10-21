@@ -101,21 +101,11 @@
     .skin-product-image {
       background-image: url('https://github.com/IreneLee18/dulce-iris-shop/blob/master/src/style/image/fix1.jpg?raw=true');
     }
-
-    .skin-product-none-image {
-      position: absolute;
-      right: -100000px;
-    }
   }
 
   .korea-skincare {
     .skin-product-image {
       background-image: url('https://github.com/IreneLee18/dulce-iris-shop/blob/master/src/style/image/fix2.jpg?raw=true');
-    }
-
-    .skin-product-none-image {
-      position: absolute;
-      left: -100000px;
     }
   }
 }
@@ -164,6 +154,7 @@
 
   &-text-group {
     position: relative;
+    overflow: hidden !important;
 
     @media (max-width:414px) {
       @include background-image('https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80', cover, no-repeat);
@@ -179,6 +170,9 @@
   &-none-text {
     opacity: 0;
     left: 1000px !important;
+    @media (max-width:414px) {
+      display: none;
+    }
   }
 
 }

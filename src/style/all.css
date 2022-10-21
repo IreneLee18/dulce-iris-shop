@@ -782,8 +782,20 @@ input[type=checkbox]:checked:after {
   }
 }
 
+.user-header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 .user-header .logo {
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .user-header .logo:hover {
@@ -1202,18 +1214,8 @@ input[type=checkbox]:checked:after {
   background-image: url("https://github.com/IreneLee18/dulce-iris-shop/blob/master/src/style/image/fix1.jpg?raw=true");
 }
 
-.skin-product .algal-needle .skin-product-none-image {
-  position: absolute;
-  right: -100000px;
-}
-
 .skin-product .korea-skincare .skin-product-image {
   background-image: url("https://github.com/IreneLee18/dulce-iris-shop/blob/master/src/style/image/fix2.jpg?raw=true");
-}
-
-.skin-product .korea-skincare .skin-product-none-image {
-  position: absolute;
-  left: -100000px;
 }
 
 .home-about {
@@ -1275,6 +1277,7 @@ input[type=checkbox]:checked:after {
 
 .home-about-text-group {
   position: relative;
+  overflow: hidden !important;
 }
 
 @media (max-width: 414px) {
@@ -1298,6 +1301,12 @@ input[type=checkbox]:checked:after {
 .home-about-none-text {
   opacity: 0;
   left: 1000px !important;
+}
+
+@media (max-width: 414px) {
+  .home-about-none-text {
+    display: none;
+  }
 }
 
 .home-subscribe {
@@ -2276,6 +2285,13 @@ input[type=checkbox]:checked:after {
   height: 300px;
 }
 
+@media (max-width: 414px) {
+  .promotion-spin-the-wheel {
+    width: 260px;
+    height: 260px;
+  }
+}
+
 .promotion-spin-the-wheel-outside {
   width: 100%;
   height: 100%;
@@ -2331,6 +2347,12 @@ input[type=checkbox]:checked:after {
   text-align: center;
   padding-top: 20px;
   font-size: 46px;
+}
+
+@media (max-width: 414px) {
+  .promotion-spin-the-wheel-inner li div {
+    font-size: 36px;
+  }
 }
 
 .promotion-spin-the-wheel-pointer {

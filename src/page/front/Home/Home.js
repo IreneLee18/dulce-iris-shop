@@ -22,7 +22,18 @@ function Home() {
     }
   };
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.screen.width <= 414) {
+        console.log(window.scrollY,window.innerHeight)
+      } else if (window.screen.width <= 820 && window.screen.width > 414) {
+        console.log(window.scrollY,window.innerHeight)
+      } else {
+        console.log(window.scrollY,window.innerHeight)
+
+      }
+    });
     window.addEventListener("scroll", () => {
+      console.log(window.scrollY,window.innerHeight)
       if (
         window.scrollY > Math.ceil(window.innerHeight / 3) &&
         window.scrollY < Math.ceil(window.innerHeight * 1.7)
@@ -67,7 +78,7 @@ function Home() {
                   className={
                     scroll.suggest
                       ? "skin-product-image"
-                      : "skin-product-none-image"
+                      : ""
                   }
                   onClick={() =>
                     navigate("/product/detail/-NDhnTNfNsJ09JRnCZhu")
@@ -79,7 +90,7 @@ function Home() {
                   className={
                     scroll.suggest
                       ? "skin-product-image"
-                      : "skin-product-none-image"
+                      : ""
                   }
                   onClick={() =>
                     navigate("/product/detail/-NDhmIhfGQhM6KsbFqhh")

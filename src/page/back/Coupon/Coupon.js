@@ -19,7 +19,6 @@ function Coupon() {
       setCoupons(res.coupons);
       setPagination(res.pagination);
       setIsLoading(() => false);
-      console.log(res);
     });
   }, [currentPage]);
   useEffect(() => {

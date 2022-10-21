@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../../../utils/Context";
-import { navAllLink, productLink } from "../../../utils/Data";
+import { navDeskLink,navAllLink, productLink } from "../../../utils/Data";
 import currency from "../../../utils/Currency";
 
 function Header() {
-  const navLink = navAllLink.slice(5, 8);
   const [navToggle, setNavToggle] = useState(false);
   const navToggleDisplay = [{ left: "0px" }, { left: "-900px" }];
   const {
@@ -15,7 +14,11 @@ function Header() {
     heart,
     handleClickDeleteHeart,
   } = useContext(DataContext);
-
+  // 當網址有變化時，就將sm-navbar隱藏
+  const location = useLocation();
+  useEffect(() => {
+    setNavToggle(() => false);
+  }, [location.pathname]);
   return (
     <header className="user-header">
       <div className="container flex-jcsb">
@@ -25,47 +28,41 @@ function Header() {
         >
           reorder
         </span>
-        <Link to="/" className="logo logo-font">
-          DULCE IRIS
-        </Link>
-        <ul className="nav-menu">
-          <li className="nav-menu-allProduct">
-            <Link to="/products/所有商品">
-              <span>所有商品</span>
-              <span>SHOP ALL</span>
-            </Link>
-            <div className="nav-shop">
-              <ul>
-                <li>
-                  <p className="nav-shop-title">品牌主打</p>
-                  <ul className="nav-shop-item">
-                    {productLink.map((item) => (
-                      <li key={item.title}>
-                        <Link to={item.link}>{item.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                {/* <li>
-                  <p className="nav-shop-title">優惠活動</p>
-                  <ul className="nav-shop-item">
-                    <li>
-                      <Link to="/product/promotions">全部優惠活動</Link>
-                    </li>
-                  </ul>
-                </li> */}
-              </ul>
-            </div>
-          </li>
-          {navLink.map((item) => (
-            <li key={item.englishTitle}>
-              <Link to={item.link}>
-                <span>{item.title}</span>
-                <span>{item.englishTitle}</span>
+        <div className="navbar">
+          <Link to="/" className="logo logo-font">
+            DULCE IRIS
+          </Link>
+          <ul className="nav-menu">
+            <li className="nav-menu-allProduct">
+              <Link to="/products/所有商品">
+                <span>產品列表</span>
+                <span>SHOP ALL</span>
               </Link>
+              <div className="nav-shop">
+                <ul>
+                  <li>
+                    <p className="nav-shop-title">品牌主打</p>
+                    <ul className="nav-shop-item">
+                      {productLink.map((item) => (
+                        <li key={item.title}>
+                          <Link to={item.link}>{item.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </li>
-          ))}
-        </ul>
+            {navDeskLink.map((item) => (
+              <li key={item.englishTitle}>
+                <Link to={item.link}>
+                  <span>{item.title}</span>
+                  <span>{item.englishTitle}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <ul className="nav-icons">
           <li className="heart">
             <span className="material-symbols-outlined">favorite</span>

@@ -15,8 +15,14 @@
     }
   }
 
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .logo {
-    font-size: 24px;
+    font-size: 36px;
 
     &:hover {
       font-weight: bold;
@@ -122,7 +128,7 @@
 
   }
 
-  .heart > span { 
+  .heart>span {
     cursor: default;
   }
 

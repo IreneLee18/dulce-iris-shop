@@ -29,10 +29,17 @@ export const navAllLink = [
     englishTitle: "Promotion",
     link: "/promotion",
   },
+];
+export const navDeskLink = [
   {
-    title: "訂單查詢",
-    englishTitle: "ORDERS",
-    link: "/orders",
+    title: "預約時間",
+    englishTitle: "RESERVE",
+    link: "/reserve",
+  },
+  {
+    title: "促銷方案",
+    englishTitle: "Promotion",
+    link: "/promotion",
   },
 ];
 export const productLink = [
@@ -57,6 +64,7 @@ export const productLink = [
     link: "/products/居家保養",
   },
 ];
+
 export const sliderData = [
   {
     // src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
