@@ -123,5 +123,8 @@
     color: $danger;
     font-size: 14px;
     padding-top: 10px;
+    @media (max-width:414px) {
+      padding-left: 0 !important;
+    }
   }
 }

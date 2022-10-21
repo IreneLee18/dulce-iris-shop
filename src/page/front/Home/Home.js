@@ -1,7 +1,6 @@
 import Slider from "./Component/Slider/Slider";
 import { useNavigate } from "react-router-dom";
 import { sweetAlert } from "../../../utils/SweetAlert";
-
 import { useEffect, useState } from "react";
 function Home() {
   const navigate = useNavigate();
@@ -22,18 +21,7 @@ function Home() {
     }
   };
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (window.screen.width <= 414) {
-        console.log(window.scrollY,window.innerHeight)
-      } else if (window.screen.width <= 820 && window.screen.width > 414) {
-        console.log(window.scrollY,window.innerHeight)
-      } else {
-        console.log(window.scrollY,window.innerHeight)
-
-      }
-    });
     window.addEventListener("scroll", () => {
-      console.log(window.scrollY,window.innerHeight)
       if (
         window.scrollY > Math.ceil(window.innerHeight / 3) &&
         window.scrollY < Math.ceil(window.innerHeight * 1.7)

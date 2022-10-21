@@ -22,7 +22,7 @@
   }
 
   .logo {
-    font-size: 36px;
+    @include font-size(36px, 36px, 28px);
 
     &:hover {
       font-weight: bold;
@@ -96,7 +96,7 @@
 
   .nav-shop {
     position: absolute;
-    top: 42px;
+    top: 34px;
     // left: -75px;
     opacity: 0;
     visibility: hidden;

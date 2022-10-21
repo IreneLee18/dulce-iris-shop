@@ -5,6 +5,8 @@ import Pagination from "../../../components/Pagination";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
+import Skeleton from "@mui/material/Skeleton";
+const skeleton = [...Array(8).keys()];
 function Products() {
   const navigate = useNavigate();
   const { ID } = useParams();
@@ -132,10 +134,29 @@ function Products() {
         <section>
           <div className="user-product-group container">
             {isLoading ? (
-              <div className="isLoading">
-                <p>讀取資料中請稍候...</p>
-              </div>
+              <>
+                <ul className="skeletonList">
+                  {skeleton.map((item) => (
+                    <li key={item}>
+                      <Skeleton variant="rectangular" height={200} />
+                      <Skeleton variant="text" sx={{ fontSize: "4rem" }} />
+                      <div style={{ width: "33.33333%" }}>
+                        <Skeleton variant="text" sx={{ fontSize: "2rem" }} />
+                      </div>
+                      <div style={{ display: "flex", marginTop: "10px" }}>
+                        <div style={{ marginRight: "20px" }}>
+                          <Skeleton variant="circular" width={40} height={40} />
+                        </div>
+                        <Skeleton variant="circular" width={40} height={40} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </>
             ) : (
+              // <div className="isLoading">
+              //   <p>讀取資料中請稍候...</p>
+              // </div>
               <>
                 <ul>
                   {pageProduct.map((item) => (
