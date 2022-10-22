@@ -102,6 +102,10 @@ function CartFinish() {
                 </div>
               </li>
               <li>
+                <div>付款狀態</div>
+                <div>{isPay?'已付款 ⭕️ ⭕️ ⭕️':'未付款 ❌ ❌ ❌'}</div>
+              </li>
+              <li>
                 <div>訂購商品</div>
                 <div className="productList">
                   <span>共 {currency(cartProduct.current.length)} 項</span>
