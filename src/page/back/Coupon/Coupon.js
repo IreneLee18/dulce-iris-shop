@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { sweetAlert } from "../../../utils/SweetAlert";
 // import DashboardSearch from "../../../components/DashboardSearch";
 import Loading from "../../../components/Loading";
+import { ScrollToTop } from "../../../utils/Scroll";
 function Coupon() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
@@ -117,9 +118,7 @@ function Coupon() {
               >
                 add_circle
               </button>
-              <button className="scroll-top material-symbols-outlined">
-                assistant_navigation
-              </button>
+              <ScrollToTop/>
             </div>
           </div>
           {pagination.total_pages > 1 ? (

@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { getOrder, deleteOrder, deleteAllOrder } from "../../../utils/API";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import currency from "../../../utils/Currency";
+import { ScrollToTop } from "../../../utils/Scroll";
 function Order() {
   const orderModalRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
@@ -127,6 +128,9 @@ function Order() {
                       CLEAR ALL
                     </button>
                   </div>
+                </div>
+                <div>
+                  <ScrollToTop />
                 </div>
               </>
             ) : (

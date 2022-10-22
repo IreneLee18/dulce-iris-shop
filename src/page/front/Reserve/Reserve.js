@@ -1,11 +1,12 @@
 import Calendar from "./Component/Calendar";
+import { ScrollToTop } from "../../../utils/Scroll";
 
 function Reserve() {
   return (
     <>
       <section>
         <div className="reserve">
-        <div className="background-image"></div>
+          <div className="background-image"></div>
           <div className="note container">
             <div className="reserve-calendar">
               <Calendar />
@@ -75,6 +76,9 @@ function Reserve() {
               </li>
             </ul>
           </div>
+        </div>
+        <div>
+          <ScrollToTop />
         </div>
       </section>
     </>

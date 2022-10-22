@@ -6,8 +6,10 @@ import { getProductAll, deleteProduct } from "../../../utils/API";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import currency from "../../../utils/Currency";
 import { dashboardProductSearch } from "../../../utils/Data";
+import { ScrollToTop } from "../../../utils/Scroll";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 function Product() {
   const navigate = useNavigate();
   const productViewModalRef = useRef();
@@ -192,9 +194,7 @@ function Product() {
               >
                 add_circle
               </button>
-              <button className="scroll-top material-symbols-outlined">
-                assistant_navigation
-              </button>
+              <ScrollToTop />
             </div>
           </div>
           <section className="productViewModal">

@@ -4,6 +4,7 @@ import { DataContext } from "../../../utils/Context";
 import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
 import Skeleton from "@mui/material/Skeleton";
+import { ScrollToTop } from "../../../utils/Scroll";
 
 function ProductDetail() {
   const navigate = useNavigate();
@@ -51,11 +52,7 @@ function ProductDetail() {
                 <span className="material-symbols-outlined">chevron_right</span>
               </li>
               <li>
-                <Skeleton
-                  variant="text"
-                  sx={{ fontSize: "1rem" }}
-                  width={80}
-                />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} width={80} />
               </li>
               <li>
                 <span className="material-symbols-outlined">chevron_right</span>
@@ -143,7 +140,7 @@ function ProductDetail() {
                     <Skeleton variant="rectangular" height={50} />
                   </div>
                   <Skeleton variant="rectangular" height={50} />
-                  <div className="flex-jcsb" style={{marginTop:'10px'}}>
+                  <div className="flex-jcsb" style={{ marginTop: "10px" }}>
                     <Skeleton variant="rectangular" height={50} width={100} />
                     <Skeleton variant="rectangular" height={50} width={100} />
                   </div>
@@ -366,6 +363,9 @@ function ProductDetail() {
                 </li>
               </ul>
             </section>
+            <div>
+              <ScrollToTop />
+            </div>
           </>
         )}
       </div>

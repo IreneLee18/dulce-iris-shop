@@ -6,6 +6,8 @@ import { sweetAlert } from "../../../utils/SweetAlert";
 import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
 import Skeleton from "@mui/material/Skeleton";
+import { ScrollToTop } from "../../../utils/Scroll";
+
 const skeleton = [...Array(8).keys()];
 function Products() {
   const navigate = useNavigate();
@@ -232,6 +234,9 @@ function Products() {
                     setCurrentPage={setCurrentPage}
                   />
                 </section>
+                <div>
+                  <ScrollToTop />
+                </div>
               </>
             )}
           </div>

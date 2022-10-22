@@ -37,7 +37,7 @@
       height: calc(50vh - 93px);
 
       @media (max-width:414px) {
-        height: 30vh;
+        height: 40vh;
         width: 100%;
       }
     }
@@ -170,6 +170,7 @@
   &-none-text {
     opacity: 0;
     left: 1000px !important;
+
     @media (max-width:414px) {
       display: none;
     }
@@ -220,6 +221,7 @@
     background: $light-brown;
     width: 20%;
     font-weight: bold;
+    height: 100%;
 
     &:hover {
       text-shadow: 0 0 2px #fff;

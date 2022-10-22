@@ -2,6 +2,7 @@ import Slider from "./Component/Slider/Slider";
 import { useNavigate } from "react-router-dom";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import { useEffect, useState } from "react";
+import {ScrollToTop}  from "../../../utils/Scroll";
 function Home() {
   const navigate = useNavigate();
   const [scroll, setScroll] = useState({
@@ -22,15 +23,28 @@ function Home() {
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (
-        window.scrollY > Math.ceil(window.innerHeight / 3) &&
-        window.scrollY < Math.ceil(window.innerHeight * 1.7)
-      ) {
-        setScroll((state) => ({ ...state, suggest: true }));
-        setScroll((state) => ({ ...state, about: false }));
+      if (window.screen.width > 414) {
+        if (
+          window.scrollY > Math.ceil(window.innerHeight / 3) &&
+          window.scrollY < Math.ceil(window.innerHeight * 1.8)
+        ) {
+          setScroll((state) => ({ ...state, suggest: true }));
+          setScroll((state) => ({ ...state, about: false }));
+        } else {
+          setScroll((state) => ({ ...state, suggest: false }));
+          setScroll((state) => ({ ...state, about: true }));
+        }
       } else {
-        setScroll((state) => ({ ...state, suggest: false }));
-        setScroll((state) => ({ ...state, about: true }));
+        if (
+          window.scrollY > Math.ceil(window.innerHeight / 3) &&
+          window.scrollY < Math.ceil(window.innerHeight * 3)
+        ) {
+          setScroll((state) => ({ ...state, suggest: true }));
+          setScroll((state) => ({ ...state, about: false }));
+        } else {
+          setScroll((state) => ({ ...state, suggest: false }));
+          setScroll((state) => ({ ...state, about: true }));
+        }
       }
     });
   });
@@ -63,11 +77,7 @@ function Home() {
                   </ul>
                 </div>
                 <div
-                  className={
-                    scroll.suggest
-                      ? "skin-product-image"
-                      : ""
-                  }
+                  className={scroll.suggest ? "skin-product-image" : ""}
                   onClick={() =>
                     navigate("/product/detail/-NDhnTNfNsJ09JRnCZhu")
                   }
@@ -75,11 +85,7 @@ function Home() {
               </li>
               <li className="skin-product-item korea-skincare">
                 <div
-                  className={
-                    scroll.suggest
-                      ? "skin-product-image"
-                      : ""
-                  }
+                  className={scroll.suggest ? "skin-product-image" : ""}
                   onClick={() =>
                     navigate("/product/detail/-NDhmIhfGQhM6KsbFqhh")
                   }
@@ -151,6 +157,9 @@ function Home() {
             </label>
           </div>
         </section>
+      </div>
+      <div>
+        <ScrollToTop/>
       </div>
     </>
   );

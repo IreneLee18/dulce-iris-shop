@@ -2,6 +2,8 @@ import currency from "../../../utils/Currency";
 import { sweetAlert } from "../../../utils/SweetAlert";
 import { wheelData } from "../../../utils/Data";
 import { useState, useEffect, useCallback } from "react";
+import { ScrollToTop } from "../../../utils/Scroll";
+
 function Promotion() {
   const handleClick = () => {
     sweetAlert("success", "恭喜您找到隱藏折扣代碼！", "代碼：littlegift");
@@ -46,7 +48,7 @@ function Promotion() {
   return (
     <>
       <section className="promotion">
-      <div className="background-image"></div>
+        <div className="background-image"></div>
         <h1 className="container">PROMOTION</h1>
         <section className="promotion-wheel container">
           <h2>轉盤抽抽樂</h2>
@@ -149,6 +151,9 @@ function Promotion() {
             </li>
           </ul>
         </section>
+        <div>
+          <ScrollToTop />
+        </div>
       </section>
     </>
   );
