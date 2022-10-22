@@ -5,7 +5,7 @@ function PaginationDefault({ pagination, setCurrentPage }) {
   return (
     <ul className="pagination">
       <li>
-        <button
+        <div
           id="pre"
           className={`material-icons-outlined ${
             pagination.has_pre ? "" : "disabled"
@@ -14,22 +14,22 @@ function PaginationDefault({ pagination, setCurrentPage }) {
             setCurrentPage((state) => (state === 1 ? state : state - 1))
           }
         >
-          chevron_left
-        </button>
+          <span>chevron_left</span>
+        </div>
       </li>
       {pageNum.map((pageNum) => (
         <li key={pageNum} id={pageNum}>
-          <button
+          <div
             className={pageNum === pagination.current_page ? "active" : ""}
             value={pageNum}
             onClick={(e) => setCurrentPage(Number(e.target.value))}
           >
-            {pageNum}
-          </button>
+            <span>{pageNum}</span>
+          </div>
         </li>
       ))}
       <li className={pagination.has_next ? "" : "disabled"}>
-        <button
+        <div
           id="next"
           className={`material-icons-outlined ${
             pagination.has_next ? "" : "disabled"
@@ -42,8 +42,8 @@ function PaginationDefault({ pagination, setCurrentPage }) {
             )
           }
         >
-          chevron_right
-        </button>
+          <span>chevron_right</span>
+        </div>
       </li>
     </ul>
   );

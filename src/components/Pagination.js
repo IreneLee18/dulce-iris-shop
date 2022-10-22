@@ -47,7 +47,7 @@ function Pagination({
       {pagination.total_pages > 1 ? (
         <ul className="pagination">
           <li>
-            <button
+            <div
               id="pre"
               className={`material-icons-outlined ${
                 pagination.has_pre ? "" : "disabled"
@@ -57,21 +57,21 @@ function Pagination({
               }
             >
               <span>chevron_left</span>
-            </button>
+            </div>
           </li>
           {pageNum.map((pageNum) => (
             <li key={pageNum} id={pageNum}>
-              <button
+              <div
                 className={pageNum === pagination.current_page ? "active" : ""}
                 value={pageNum}
                 onClick={(e) => setCurrentPage(Number(e.target.value))}
               >
                 <span>{pageNum}</span>
-              </button>
+              </div>
             </li>
           ))}
           <li className={pagination.has_next ? "" : "disabled"}>
-            <button
+            <div
               id="next"
               className={`material-icons-outlined ${
                 pagination.has_next ? "" : "disabled"
@@ -85,7 +85,7 @@ function Pagination({
               }
             >
               <span>chevron_right</span>
-            </button>
+            </div>
           </li>
         </ul>
       ) : null}

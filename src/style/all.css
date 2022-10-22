@@ -5197,22 +5197,20 @@ input[type=checkbox]:checked:after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #b39686;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
   overflow: hidden;
   margin: 0 10px;
 }
 
-.pagination button {
-  width: 100%;
-  height: 100%;
+.pagination li div {
+  background: #b39686;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
   font-size: 24px;
   position: relative;
 }
 
-.pagination button span {
+.pagination li div span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5220,7 +5218,7 @@ input[type=checkbox]:checked:after {
           transform: translate(-50%, -50%);
 }
 
-.pagination button:hover {
+.pagination li div:hover {
   background: #bda496;
   color: #fff;
 }
