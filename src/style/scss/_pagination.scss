@@ -13,8 +13,12 @@
       background: lighten($dark-brown, 35%);
       width: 50px;
       height: 50px;
-      border-radius: 50px;
+      border-radius: 50%;
       font-size: 24px;
+      position: relative;
+      span{
+        @include absolute-center;
+      }
 
       &:hover {
         background: lighten($dark-brown, 40%);
