@@ -56,7 +56,7 @@ function Pagination({
                 setCurrentPage((state) => (state === 1 ? state : state - 1))
               }
             >
-              chevron_left
+              <span>chevron_left</span>
             </button>
           </li>
           {pageNum.map((pageNum) => (
@@ -66,7 +66,7 @@ function Pagination({
                 value={pageNum}
                 onClick={(e) => setCurrentPage(Number(e.target.value))}
               >
-                {pageNum}
+                <span>{pageNum}</span>
               </button>
             </li>
           ))}
@@ -84,7 +84,7 @@ function Pagination({
                 )
               }
             >
-              chevron_right
+              <span>chevron_right</span>
             </button>
           </li>
         </ul>
