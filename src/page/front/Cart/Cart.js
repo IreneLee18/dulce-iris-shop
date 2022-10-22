@@ -11,7 +11,6 @@ function Cart() {
   let unPay = location.pathname.includes("-");
   let finish = location.pathname.includes("finish");
   useEffect(() => {
-    console.log(info, unPay, finish, cart.length);
     if (cart.length === 0 && !info && !unPay && !finish) {
       sweetAlert(
         "error",

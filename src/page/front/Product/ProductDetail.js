@@ -21,12 +21,16 @@ function ProductDetail() {
   const [productDetail, setProductDetail] = useState([]);
   const [suggestionProduct, setSuggestionProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentImage, setCurrentImage] = useState(productDetail.imageUrl);
   const handleClickShare = () => {
     // 複製網址
     navigator.clipboard
       .writeText(window.location.href)
       .then(() => sweetAlert("success", "複製成功"))
       .catch(() => sweetAlert("error", "複製失敗", "請手動複製"));
+  };
+  const handleClickChangeImage = (e) => {
+    setCurrentImage(() => e.target.src);
   };
   useLayoutEffect(() => {
     getProductsData().then((res) => {
@@ -38,9 +42,11 @@ function ProductDetail() {
           item.title !== productDetail.title
       );
       setSuggestionProduct(sameCategory);
+      setCurrentImage(() => productDetail.imageUrl);
+      // console.log(productDetail.imageUrl)
       setIsLoading(() => false);
     });
-  }, [ID, productDetail.category, productDetail.title]);
+  }, [ID, productDetail.category, productDetail.imageUrl, productDetail.title]);
   return (
     <>
       <div className="user-productDetail container">
@@ -214,20 +220,43 @@ function ProductDetail() {
                 {productDetail.imagesUrl !== undefined ? (
                   <div className="user-productDetail-images">
                     <div className="user-productDetail-images-show">
-                      <img src={productDetail.imageUrl} alt="" />
+                      <img src={currentImage} alt={currentImage} />
                     </div>
                     <ul className="user-productDetail-images-group">
                       {productDetail.imagesUrl !== undefined &&
                         productDetail.imagesUrl.map((item) => (
-                          <li key={item.id}>
-                            <img src={item.imageUrl} alt={item.id} />
+                          <li
+                            key={item.id}
+                            style={
+                              currentImage === item.imageUrl
+                                ? { display: "none" }
+                                : {}
+                            }
+                          >
+                            <img
+                              src={item.imageUrl}
+                              alt={item.imageUrl}
+                              onClick={handleClickChangeImage}
+                            />
                           </li>
                         ))}
+                      {currentImage !== productDetail.imageUrl ? (
+                        <li>
+                          <img
+                            src={productDetail.imageUrl}
+                            alt={productDetail.imageUrl}
+                            onClick={handleClickChangeImage}
+                          />
+                        </li>
+                      ) : null}
                     </ul>
                   </div>
                 ) : (
                   <div className="user-productDetail-images">
-                    <img src={productDetail.imageUrl} alt="" />
+                    <img
+                      src={productDetail.imageUrl}
+                      alt={productDetail.imagesUrl}
+                    />
                   </div>
                 )}
                 <div className="user-productDetail-descriptionInfo">

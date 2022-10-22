@@ -58,10 +58,12 @@ function Product() {
   useLayoutEffect(() => {
     getProductAll().then(async (res) => {
       try {
-        const data = [];
-        Object.entries(res.products).forEach((item) => data.push(item[1]));
-        allProduct.current = data;
-        await setIsLoading(() => false);
+        if(res.success){
+          const data = [];
+          Object.entries(res.products).forEach((item) => data.push(item[1]));
+          allProduct.current = data;
+          await setIsLoading(() => false);
+        }
       } catch (err) {
         console.error(err);
       }

@@ -153,6 +153,10 @@
 
     &-delete {
       width: 2%;
+
+      button {
+        font-size: 20px;
+      }
     }
 
   }
@@ -193,6 +197,7 @@
 
     label {
       margin-bottom: 10px;
+      height: 40px;
 
       input {
         width: 85%;
@@ -288,6 +293,7 @@
 
       label {
         width: 70%;
+        height: 40px;
 
         input {
           text-align: left;
@@ -295,6 +301,7 @@
 
         button {
           width: 30%;
+          height: 100%;
           background-color: $light-brown;
           color: #fff;
         }
@@ -318,6 +325,7 @@
     .allPriceANDgoPay {
       padding-left: 20px;
       text-align: right;
+      height: 65px;
 
       .allPrice {
         margin: 0 5px;
@@ -330,6 +338,7 @@
         color: #fff;
         padding: 20px;
         font-size: 18px;
+        height: 100%;
       }
     }
   }
