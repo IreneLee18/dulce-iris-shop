@@ -138,13 +138,13 @@ button {
 
 @media (max-width: 820px) {
   .scroll-top {
-    right: 50px;
+    right: 30px;
   }
 }
 
 @media (max-width: 414px) {
   .scroll-top {
-    right: 30px;
+    right: 10px;
   }
 }
 
@@ -188,13 +188,13 @@ button {
 
 @media (max-width: 820px) {
   .dashboard-add {
-    right: 50px;
+    right: 30px;
   }
 }
 
 @media (max-width: 414px) {
   .dashboard-add {
-    right: 30px;
+    right: 10px;
   }
 }
 
@@ -644,7 +644,7 @@ input[type=checkbox]:after {
   position: absolute;
   width: 10px;
   height: 16px;
-  top: 0;
+  bottom: 0;
   left: 0;
   content: " ";
   background-color: #fff;
