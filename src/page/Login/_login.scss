@@ -115,12 +115,17 @@
     display: flex;
     align-items: baseline;
 
+    input {
+      width: 1px;
+      height: 1px;
+    }
+
     span {
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 0 2px #fff;
       display: inline-block;
-      margin-left: 5px;
+      margin-left: 15px;
       cursor: pointer;
     }
   }
