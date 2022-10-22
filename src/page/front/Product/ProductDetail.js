@@ -5,6 +5,7 @@ import { getProductsData } from "../../../utils/API";
 import currency from "../../../utils/Currency";
 import Skeleton from "@mui/material/Skeleton";
 import { ScrollToTop } from "../../../utils/Scroll";
+import { sweetAlert } from "../../../utils/SweetAlert";
 
 function ProductDetail() {
   const navigate = useNavigate();
@@ -20,6 +21,13 @@ function ProductDetail() {
   const [productDetail, setProductDetail] = useState([]);
   const [suggestionProduct, setSuggestionProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const handleClickShare = () => {
+    // 複製網址
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => sweetAlert("success", "複製成功"))
+      .catch(() => sweetAlert("error", "複製失敗", "請手動複製"));
+  };
   useLayoutEffect(() => {
     getProductsData().then((res) => {
       const data = res.products.filter((item) => item.id === ID);
@@ -203,19 +211,25 @@ function ProductDetail() {
                     <li>({productDetail.unit})</li>
                   </ul>
                 </div>
-                <div className="user-productDetail-images">
-                  <div className="user-productDetail-images-show">
+                {productDetail.imagesUrl !== undefined ? (
+                  <div className="user-productDetail-images">
+                    <div className="user-productDetail-images-show">
+                      <img src={productDetail.imageUrl} alt="" />
+                    </div>
+                    <ul className="user-productDetail-images-group">
+                      {productDetail.imagesUrl !== undefined &&
+                        productDetail.imagesUrl.map((item) => (
+                          <li key={item.id}>
+                            <img src={item.imageUrl} alt={item.id} />
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <div className="user-productDetail-images">
                     <img src={productDetail.imageUrl} alt="" />
                   </div>
-                  <ul className="user-productDetail-images-group">
-                    {productDetail.imagesUrl !== undefined &&
-                      productDetail.imagesUrl.map((item) => (
-                        <li key={item.id}>
-                          <img src={item.imageUrl} alt={item.id} />
-                        </li>
-                      ))}
-                  </ul>
-                </div>
+                )}
                 <div className="user-productDetail-descriptionInfo">
                   <div className="header">
                     <h1 className="title">{productDetail.title}</h1>
@@ -301,7 +315,7 @@ function ProductDetail() {
                           <span id={ID}>LIKE</span>
                         </div>
                       )}
-                      <div className="share">
+                      <div className="share" onClick={handleClickShare}>
                         <span className="material-symbols-outlined">share</span>
                         <span>SHARE</span>
                       </div>

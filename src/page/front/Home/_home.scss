@@ -215,6 +215,9 @@
     border: none;
     width: 80%;
     background: transparent;
+    &:focus{
+      background: rgba(255, 255, 255,.7);
+    }
   }
 
   button {

@@ -6,7 +6,6 @@ export const ScrollToTop = () => {
   useEffect(() => {
     window.addEventListener('scroll',()=>{
       setIsScrollY(window.scrollY);
-      console.log(screenHeight,isScrollY)
     })
   });
   return (

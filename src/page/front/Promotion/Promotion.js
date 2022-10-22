@@ -6,7 +6,9 @@ import { ScrollToTop } from "../../../utils/Scroll";
 
 function Promotion() {
   const handleClick = () => {
-    sweetAlert("success", "恭喜您找到隱藏折扣代碼！", "代碼：littlegift");
+    sweetAlert("success", "恭喜您找到隱藏折扣代碼！", "代碼：littlegift，且已複製成功！");
+    navigator.clipboard.writeText('littlegift')
+
   };
   const [startPress, setStartPress] = useState(false);
   const [isStart, setIsStart] = useState(false);
@@ -34,8 +36,9 @@ function Promotion() {
         sweetAlert(
           "success",
           `恭喜您獲得${getCode.id}%折扣`,
-          `代碼：${getCode.code}`
+          `代碼：${getCode.code}，且已複製成功！`
         );
+        navigator.clipboard.writeText(getCode.code)
       }
     }, [4000]);
   }, [startDeg]);

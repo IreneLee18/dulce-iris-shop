@@ -15,7 +15,8 @@ function Home() {
       subscribe.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g) &&
       subscribe !== ""
     ) {
-      sweetAlert("success", "訂閱成功", "恭喜獲得折扣碼：subscribeus");
+      sweetAlert("success", "訂閱成功", "恭喜獲得折扣碼：subscribeus，且已複製成功！");
+      navigator.clipboard.writeText('subscribeus')
       setSubscribe("");
     } else {
       sweetAlert("error", "請輸入正確Email");

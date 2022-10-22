@@ -1375,6 +1375,10 @@ input[type=checkbox]:checked:after {
   background: transparent;
 }
 
+.home-subscribe input:focus {
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .home-subscribe button {
   background: #a79387;
   width: 20%;
