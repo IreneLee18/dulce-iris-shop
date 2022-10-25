@@ -380,6 +380,7 @@ const CreateProduct = () => {
                   </label>
                   <label className="enable" htmlFor="is_enabled">
                     <span>啟用</span>
+                    <span className={`checkbox ${product.is_enabled?'isChecked':''}`}></span>
                     <input
                       type="checkbox"
                       id="is_enabled"

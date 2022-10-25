@@ -114,13 +114,14 @@ function Login() {
                 ) : null}
               </label>
               <label className="remember" htmlFor="remember">
+                <span className={`checkbox ${remember?'isChecked':''}`}></span>
                 <input
                   id="remember"
                   type="checkbox"
                   checked={remember}
                   onChange={() => setRemember((state) => !state)}
                 />
-                <span>記住我</span>
+                <span className="rememberMe">記住我</span>
               </label>
               <button type="submit">送出</button>
               <p>

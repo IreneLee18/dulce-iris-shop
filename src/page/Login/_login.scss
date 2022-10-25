@@ -116,18 +116,47 @@
   .remember {
     position: relative;
     display: flex;
-    align-items: baseline;
-    input{
-      width: 1px;
-      height: 1px;
+
+    input {
+      opacity: 0;
     }
 
-    span {
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      color: $dark-brown;
+      border: 1px solid $dark-brown;
+      display: inline-block;
+      visibility: visible;
+      padding: 0px 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .isChecked{
+      &::after {
+        content: "✔︎";
+        width: 16px;
+        height: 16px;
+        font-size: 12px;
+        color: #fff;
+        background: $light-brown;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .rememberMe {
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 0 2px #fff;
       display: inline-block;
-      margin-left: 15px;
+      margin-left: -15px;
       cursor: pointer;
     }
   }
