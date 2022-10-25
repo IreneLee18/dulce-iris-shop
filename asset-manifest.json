@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dulce-iris-shop/static/css/main.4a02945b.css",
-    "main.js": "/dulce-iris-shop/static/js/main.8b2e72d3.js",
+    "main.css": "/dulce-iris-shop/static/css/main.80c327f7.css",
+    "main.js": "/dulce-iris-shop/static/js/main.0ba6473e.js",
     "static/js/787.2e774310.chunk.js": "/dulce-iris-shop/static/js/787.2e774310.chunk.js",
     "index.html": "/dulce-iris-shop/index.html",
-    "main.4a02945b.css.map": "/dulce-iris-shop/static/css/main.4a02945b.css.map",
-    "main.8b2e72d3.js.map": "/dulce-iris-shop/static/js/main.8b2e72d3.js.map",
+    "main.80c327f7.css.map": "/dulce-iris-shop/static/css/main.80c327f7.css.map",
+    "main.0ba6473e.js.map": "/dulce-iris-shop/static/js/main.0ba6473e.js.map",
     "787.2e774310.chunk.js.map": "/dulce-iris-shop/static/js/787.2e774310.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a02945b.css",
-    "static/js/main.8b2e72d3.js"
+    "static/css/main.80c327f7.css",
+    "static/js/main.0ba6473e.js"
   ]
 }
