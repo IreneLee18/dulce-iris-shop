@@ -122,7 +122,7 @@ function Login() {
                 />
                 <span>記住我</span>
               </label>
-              <input type="submit" value="送出" />
+              <button type="submit">送出</button>
               <p>
                 忘記密碼｜<span onClick={handleForget}>Forgot password？</span>
               </p>

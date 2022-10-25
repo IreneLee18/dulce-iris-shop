@@ -96,10 +96,12 @@
     }
   }
 
-  input[type="submit"] {
+  button[type="submit"] {
+    width: 100%;
     color: $dark-brown;
     background: $dark-brown;
     border: none;
+    border-radius: 5px;
     color: #fff;
     padding: 10px 20px;
     margin-bottom: 10px;

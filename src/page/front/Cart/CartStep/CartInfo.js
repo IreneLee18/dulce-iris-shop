@@ -154,7 +154,7 @@ function CartInfo() {
             </label>
             <div className="stepBtn">
               <Link to="/cart">上一步</Link>
-              <input type="submit" value="下一步" />
+              <button type="submit">下一步</button>
             </div>
           </form>
         </div>
