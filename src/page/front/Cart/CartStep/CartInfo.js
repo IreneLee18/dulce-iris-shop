@@ -153,7 +153,7 @@ function CartInfo() {
               ></textarea>
             </label>
             <div className="stepBtn">
-              <Link to="/cart">上一步</Link>
+              <button onClick={()=>navigate('/cart')}>上一步</button>
               <button type="submit">下一步</button>
             </div>
           </form>

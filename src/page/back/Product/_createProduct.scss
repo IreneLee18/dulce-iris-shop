@@ -68,6 +68,10 @@
         position: relative;
       }
 
+      select {
+        height: 40px;
+      }
+
       .done,
       .isDone {
         position: absolute;
