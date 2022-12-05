@@ -44,7 +44,7 @@ function Login() {
           navigate("/back/dashboard/products");
           sweetAlert("success", res.message);
         } else {
-          sweetAlert("error", res.message);
+          sweetAlert("error", res.message, res.error.message);
         }
       });
     }

@@ -58,17 +58,23 @@ function Product() {
   useLayoutEffect(() => {
     getProductAll().then(async (res) => {
       try {
-        if(res.success){
+        console.log(res);
+        if (res.success) {
           const data = [];
           Object.entries(res.products).forEach((item) => data.push(item[1]));
           allProduct.current = data;
           await setIsLoading(() => false);
+        } else {
+          sweetAlert("error", res.message);
+          setTimeout(() => {
+            navigate("/");
+          }, [3000]);
         }
       } catch (err) {
         console.error(err);
       }
     });
-  }, [pageData, currentPage, handleChangePageData]);
+  }, [pageData, currentPage, handleChangePageData, navigate]);
   const handleClickDelete = (e) => {
     deleteProduct(e.target.id).then((res) => {
       if (res.success) {
