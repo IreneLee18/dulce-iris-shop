@@ -63,10 +63,10 @@ function Pagination({
             <li key={pageNum} id={pageNum}>
               <div
                 className={pageNum === pagination.current_page ? "active" : ""}
-                value={pageNum}
-                onClick={(e) => setCurrentPage(Number(e.target.value))}
+                id={pageNum}
+                onClick={(e) => setCurrentPage(Number(e.target.id))}
               >
-                <span>{pageNum}</span>
+                <span id={pageNum}>{pageNum}</span>
               </div>
             </li>
           ))}
